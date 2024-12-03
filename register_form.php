@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
    $cpass = md5($_POST['cpassword']);
    $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+   $select = " SELECT * FROM user_form WHERE email = '$email'";
 
    $result = mysqli_query($conn, $select);
 
