@@ -6,30 +6,33 @@ if(isset($_POST['submit'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
+   $pass = $_POST['password'];
+   $cpass = $_POST['cpassword'];
    $user_type = $_POST['user_type'];
+
+   if(strlen($pass) < 8) {
+      $error[] = 'Password must be at least 8 characters long!';
+   }
 
    $select = " SELECT * FROM user_form WHERE email = '$email'";
 
    $result = mysqli_query($conn, $select);
 
    if(mysqli_num_rows($result) > 0){
-
-      $error[] = 'user already exist!';
-
+      $error[] = 'User already exists!';
    }else{
-
       if($pass != $cpass){
-         $error[] = 'password not matched!';
+         $error[] = 'Passwords do not match!';
       }else{
+         $pass = md5($pass); 
+         $cpass = md5($cpass);
+
          $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
          mysqli_query($conn, $insert);
-         header('location:login_form.php');
       }
    }
-
-};
+}
+?>
 
 
 ?>
