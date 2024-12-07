@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Get Recommendation pg2</title>
+    <link rel="stylesheet" href="gc_shifted_style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="Images/image 3.png" alt="Image">
+        </div>
+
+        <div class="text-container">
+            <h1 id="f30">Step 1: Enter your details</h1>
+            <h2 id="f18">Tell us a bit about yourself so we can personalize teaching strategies that work best for your style!</h2>
+            <br>
+
+            <div id="tb-left-up">
+                <table>
+                    <div>
+                        <tr>
+                            <td><label for="YOE">Years of Experience</label></td>
+                            <td><select id="YOE" name="YOE">
+                                    <option value="" disabled selected id="non-selected">Select years of experience</option>
+                                    <option value="y">Less than 1 year</option>
+                                    <option value="y">Less than 2 years</option>
+                                    <option value="y">Less than 3 years</option>
+                                    <option value="y">More than 3 years</option>
+                            </td>
+                            </select>
+                        </tr>
+                    </div>
+
+                    <br>
+                    <div>
+                        <tr><label for="PR">Primary Role</label></tr>
+                        <tr><select id="PR" name="PR">
+                                <option value="" disabled selected  id="non-selected">Select your role</option>
+                                <option value="R">Administration Staff</option>
+                                <option value="R">Full-Time Teachers</option>
+                                <option value="R">Teaching and Research Supervisors</option>
+                                <option value="R">Others</option>
+                            </select>
+                        </tr>
+                    </div>
+
+                    <br>
+                    <div>
+                        <tr><label for="TOS">School Type"</label></tr>
+                        <tr><select id="TOS" name="TOS">
+                                <option value="" disabled selected id="non-selected">Select school type</option>
+                                <option value="short">Short(Less than 1 month)</option>
+                                <option value="med">Medium(1-3 months)</option>
+                                <option value="long">Long(4 months and above)</option>
+                            </select>
+                            <div id="CDError" class="error-message">Course duration is required.</div>
+                        </tr>
+                    </div>
+                </table>
+            </div>
+
+
+            <div id="tb_right-up">
+                <table>
+                <div>
+                    <tr><label for="Age">Age</label></tr>
+                    <tr><input type="text" id="Age" name="Age" placeholder="Enter your age"></tr>
+                </div>
+
+                <br>
+                <div>
+                    <tr><label for="G">Gender</label></tr>
+                    <tr><select id="G" name="G">
+                            <option value="" disabled selected id="non-selected">Select your role</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </tr>
+                </div>
+                </table>
+            </div>
+
+            <br>
+            <p>Teaching Style(s) Preference</p>
+            <ul>
+                <li>Tick on the box(es) wherever related to you</li>
+            </ul>
+            <br>
+            <div class="checkbox-container">
+                <div id="tb_left">
+                    <table>
+                        <tr>
+                            <td><input type="checkbox" name="style1" class="custom-checkbox"></td>
+                            <td><label class="label-box">Authority, or lecture style</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="style2" class="custom-checkbox"></td>
+                            <td><label class="label-box">Demonstrator, or coach style</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="style3" class="custom-checkbox"></td>
+                            <td><label class="label-box">Delegator, or group style</label></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="tb_right">
+                    <table>
+                        <tr>
+                            <td><input type="checkbox" name="style4" class="custom-checkbox"></td>
+                            <td><label class="label-box">Facilitator, or activity style</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="style5" class="custom-checkbox"></td>
+                            <td><label class="label-box">Hybrid, or blended style</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="style6" class="custom-checkbox"></td>
+                            <td><label>Other:</label></td>
+                            <td><input type="text" name="style6" id="cb-other"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="text" id="otherInput" name="otherInput"
+                                    placeholder="Please specify" style="display:none;"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <br>
+            <button class="button">Next</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

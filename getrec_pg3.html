@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Get Recommendation pg2</title>
+    <link rel="stylesheet" href="gc_style3.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="Images/image 4.png" alt="Image">
+        </div>
+
+        <div class="text-container">
+            <h1 id="f30">Step 2: Enter your course details</h1>
+            <h2 id="f18">Share details about your course so we can tailor a personalized teaching plan just for you!</h2>
+            <br>
+
+            <div>
+                <label for="CName">Course Name</label>
+                <input type="text" id="Cname" name="Cname" placeholder="Enter the course name">
+                <div id="CNameError" class="error-message">Course name is required.</div>
+            </div>
+
+            <br>
+            <div>
+                <label for="Clevel">Course Level</label>
+                <select id="Clevel" name="Clevel">
+                    <option value="" disabled selected>Select the course level</option>
+                    <option value="Cert1">Certificate-Year 1</option>
+                    <option value="Diploma">Diploma-Year 1</option>
+                    <option value="Diploma">Diploma-Year 2</option>
+                    <option value="Diploma">Diploma-Year 3</option>
+                    <option value="BD">Bachelor' Degree-Year 1</option>
+                    <option value="BD">Bachelor' Degree-Year 2</option>
+                    <option value="BD">Bachelor' Degree-Year 3</option>
+                    <option value="BD">Bachelor' Degree-Year 4</option>
+                    <option value="Master">Master's Degree-Year 1</option>
+                </select>
+                <div id="CLevelError" class="error-message">Course level is required.</div>
+            </div>
+
+            <br>
+            <div>
+                <label for="FOS">Field of Study</label>
+                <select id="FOS" name="FOS">
+                    <option value="" disabled selected>Select the field of study</option>
+                    <option value="BE">Built Environment</option>
+                    <option value="LL">Languages & Linguistics</option>
+                    <option value="Pharmacy">Pharmacy</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Education">Education</option>
+                    <option value="Dentistry">Dentistry</option>
+                    <option value="Business and Economics">Business amd Economics</option>
+                    <option value="Medicine">Medicine</option>
+                    <option value="Science">Science</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Arts and Social Sciences">Arts and Social Sciences</option>
+                    <option value="Creative Arts">Creative Arts</option>
+                    <option value="Law">Law</option>
+                    <option value="Sport & Exercise Sciences">Sport & Exercise Sciences</option><option value="BD">Bachelor' Degree-Year 1</option>
+                </select>
+                <div id="FOSError" class="error-message">Field of Study is required.</div>
+            </div>
+
+        <br>
+            <div>
+                <label for="ASS">Average student score</label>
+                <select id="ASS" name="ASS">
+                    <option value="" disabled selected>Select the average student score</option>
+                    <option value="a">90-100</option>
+                    <option value="b">80-89</option>
+                    <option value="c">70-79</option>
+                    <option value="d">60-69</option>
+                </select>
+            </div>
+        
+            <br>
+        <div>
+            <label for="CS">Class Size</label>
+            <input type="text" id="CS" name="CS" placeholder="Enter the class size(e.g. 30)">
+            <div id="CSError" class="error-message">Class size is required.</div>
+        </div>
+
+        <br>
+            <div>
+                <label for="TM">Teaching Mode</label>
+                <select id="TM" name="TM">
+                    <option value="" disabled selected>Select the teaching mode</option>
+                    <option value="PM">Physical Mode</option>
+                    <option value="OM">Online Mode</option>
+                    <option value="HB">Hybrid Mode</option>
+                </select>
+                <div id="TMError" class="error-message">Teaching mode is required.</div>
+            </div>
+
+            <br>
+            <div>
+                <label for="CD">Course Duration</label>
+                <select id="CD" name="CD">
+                    <option value="" disabled selected>Select the course duration</option>
+                    <option value="short">Short(Less than 1 month)</option>
+                    <option value="med">Medium(1-3 months)</option>
+                    <option value="long">Long(4 months and above)</option>
+                </select>
+                <div id="CDError" class="error-message">Course duration is required.</div>
+            </div>
+
+        <br>
+        <div>
+            <label for="CC">Course Contents</label>
+            <input type="text" id="CC" name="CC" placeholder="Enter the course contents">
+        </div>
+
+        <br>
+            <div>
+                <label for="SPP">Student Passing Percentage</label>
+                <select id="SPP" name="SPP">
+                    <option value="" disabled selected>Select percentage</option>
+                    <option value="lowest">0%-50%</option>
+                    <option value="second-lowest">51%-70%</option>
+                    <option value="second-highest">71%-89%</option>
+                    <option value="highest">90%-100%</option>
+                </select>
+            </div>
+
+        <br>
+        <button class="button">Back</button>
+        <br>
+        <button class="button">Submit</button>
+    </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+body {
+    background-color: #F1F1F1;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* Ensure body takes full height */
+    position: relative;
+    /* Set relative positioning to be the reference for absolute positioning */
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.text-container {
+    width: 50%;
+}
+
+
+.text-container h1 {
+    font-family: Abhaya Libre SemiBold;
+    font-size: 25px;
+}
+
+.text-container h2 {
+    font-family: Abhaya Libre ExtraBold;
+    font-size: 37px;
+    margin-right: 20;
+}
+
+.text-container #f30{
+    font-size:30px;
+    font-family: Abhaya Libre SemiBold;
+}
+
+.text-container #f18{
+    font-size:18px;
+    font-family: Abhaya Libre;
+}
+
+.text-container label {
+    font-size: 18px;
+    font-family: Abhaya Libre SemiBold;
+}
+
+.text-container input {
+    width: 80%; /* Makes the elements take the full width of the container */
+    padding: 15px; /* Adds padding for more spacing inside */
+    border-width: 0px;
+    font-size: 16px; /* Increases font size */
+    font-family: Abhaya Libre;
+    border-radius: 200px; /* Optional: Rounded corners */
+    margin-bottom: 10px; /* Adds space below each input/select */
+}
+
+.text-container select{
+    width: 60%; /* Makes the elements take the full width of the container */
+    padding: 15px; /* Adds padding for more spacing inside */
+    border-width: 0px;
+    font-size: 16px; /* Increases font size */
+    font-family: Abhaya Libre;
+    border-radius: 200px; /* Optional: Rounded corners */
+    margin-bottom: 10px; /* Adds space below each input/select */
+}
+
+.button {
+    background-color: #D9D9D9;
+    color: #363636;
+    border-radius: 200px;
+    width: 213.42px;
+    height: 58px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transform: translateX(300px);
+    font-size: 25px;
+    font-family: Abhaya Libre;
+}
+
+
+
+.button:hover {
+    background-color: #B5B5B5;
+}
+
+h3.contact {
+    font-family: Aboreto;
+    font-size: 15px;
+    font-weight: 250;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+h3.phone,
+h3.email {
+    margin: 0px;
+    margin-left: 40px;
+    font-family: Abhaya Libre;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+/* Quick Links Section */
+.quicklinks-container {
+
+    position: absolute;
+    /* Positioning it relative to the body */
+    bottom: 20px;
+    right: 100px;
+    /* 20px from the right side */
+    padding: 10px;
+    transform: translateY(80px);
+
+
+    .quicklinks-container h3 {
+        font-family: 'Abhaya Libre';
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+
+    .quicklinks-container ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .quicklinks-container ul li {
+        margin-bottom: 0px;
+    }
+
+    .quicklinks-container ul li a {
+        color: #363636;
+        font-size: 16px;
+    }
+
+    .quicklink-container ul li a:hover {
+        color: #007BFF;
+    }
+}

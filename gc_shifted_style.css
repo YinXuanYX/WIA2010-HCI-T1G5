@@ -1,0 +1,177 @@
+body {
+    background-color: #F1F1F1;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* Ensure body takes full height */
+    position: relative;
+    /* Set relative positioning to be the reference for absolute positioning */
+}
+
+p{
+    font-family: Abhaya Libre SemiBold;
+    font-size:20px;
+}
+
+ul li{
+    font-family:Abhaya Libre;
+    font-size:15px;
+}
+
+.non-selected{
+    color: #8A8A8A;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 80px;
+}
+
+.image-container img {
+    width: 100%;
+    transform: scale(1.2);
+    margin-left: 0px;
+    margin-top: 0px;
+
+}
+
+.text-container {
+    width: 50%;
+    transform: translateX(-400px);
+}
+
+
+.text-container h1 {
+    font-family: Abhaya Libre SemiBold;
+    font-size: 25px;
+}
+
+.text-container h2 {
+    font-family: Abhaya Libre ExtraBold;
+    font-size: 37px;
+    margin-right: 20;
+}
+
+.text-container #f30{
+    font-size:30px;
+    font-family: Abhaya Libre SemiBold;
+}
+
+.text-container #f18{
+    font-size:18px;
+    font-family: Abhaya Libre;
+}
+
+
+.checkbox-container .label-box {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius:10px;
+    height:1.5px;
+    width: 225px;
+    padding: 20px;
+    background-color:#FFFFFF;
+    font-size:14px;
+    font-family: Abhaya Libre;
+    color: #363636;
+    margin-left: 10px;
+  
+}
+
+.checkbox-container #tb_right{
+    transform: translateX(350);
+    transform:translateY(-140);
+    transform: translate(350px, -140px);
+    margin-left:20px;
+
+}
+
+.checkbox-container #tb_right #otherInput{
+    margin-left: 5px;
+}
+
+.checkbox-container #tb_right #cb_other{
+    margin-left: 0px;
+}
+
+.text-container input {
+    width: 80%; /* Makes the elements take the full width of the container */
+    padding: 15px; /* Adds padding for more spacing inside */
+    border-width: 0px;
+    font-size: 16px; /* Increases font size */
+    font-family: Abhaya Libre;
+    border-radius: 200px; /* Optional: Rounded corners */
+    margin-bottom: 10px; /* Adds space below each input/select */
+}
+
+.text-container select{
+    width: 60%; /* Makes the elements take the full width of the container */
+    padding: 15px; /* Adds padding for more spacing inside */
+    border-width: 0px;
+    font-size: 16px; /* Increases font size */
+    font-family: Abhaya Libre;
+    border-radius: 200px; /* Optional: Rounded corners */
+    margin-bottom: 10px; /* Adds space below each input/select */
+}
+
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none; /* Initially hidden */
+    margin-top: 5px;
+}
+
+
+.checkbox-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    transform: scale(0.75);
+    background-color: #D9D9D9;
+    margin-right: 8px;
+    border-radius: 20px;
+
+}
+
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.button {
+    background-color: #D9D9D9;
+    color: #363636;
+    border-radius: 200px;
+    width: 213.42px;
+    height: 58px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 70px;
+    margin-left: 450px;
+    font-size: 25px;
+    font-family: Abhaya Libre;
+}
+
+
+
+.button:hover {
+    background-color: #B5B5B5;
+}
+
+#tb-right-up{
+    transform: translateX(225);
+    transform: translateY(-400);
+    transform: translate(225px,-400px);
+}
