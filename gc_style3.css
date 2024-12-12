@@ -153,7 +153,7 @@ body {
   .select-container
   .select-arrow
   i {
-  font-size: 18px;
+  font-size: 14px;
   color: #000000;
   transition: transform 0.3s ease;
 }
