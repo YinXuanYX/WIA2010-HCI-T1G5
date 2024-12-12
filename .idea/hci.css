@@ -1,0 +1,64 @@
+/* Overall Body Background */body {
+    background-color: #f1f1f1; /* Set page background color */}
+/* Navbar */
+.nav-bar {    position: relative;
+    margin-top: 17px;    padding: 0 3rem;
+    transition: 0.5s;    z-index: 9999;
+}
+.nav-bar.sticky-top {    position: sticky;
+    padding: 0;    z-index: 9999;
+}
+.nav-bar .navbar {    box-shadow: rgba(0, 0, 0, 0.4) 2.4px 2.4px 3.2px;
+    height: 65px;    background-color: #e3dcd4; /* Keeping the navbar background as the original */
+}
+/* Apply Aboreto font to navbar items */.nav-bar .navbar .navbar-nav .nav-item {
+                                            font-family: 'Aboreto', serif;    font-size: 14px; /* Ensure consistent font size */
+                                            text-transform: uppercase;    color: #000000;
+                                            text-wrap: nowrap;    margin: 8px;
+                                        }
+.nav-bar .navbar .navbar-nav .nav-item.active {    background-color: #363636;
+    color: #fffdfd;    padding: 5px 20px;
+    border-radius: 8px;    position: relative;
+}
+/* Ensure both "Teaching" and "MOST EFFECTIVE" are red */.teaching-text,
+                                                         .effective-text {    color: red !important; /* Force red color */
+                                                         }
+/* Square background for "Enhance Teaching With Advanced Strategies" */.square-background {
+                                                                           background-color: #cfcccc; /* Set the background color /    display: inline-block; / Ensures the background fits the size of the text */
+                                                                           padding: 10px 20px; /* Adjust the padding for the square effect /    border-radius: 5px; / Optional: gives slight rounding to the corners */
+                                                                           max-width: 100%; /* Ensures the background does not overflow /    white-space: normal; / Allow wrapping */
+                                                                           font-family: 'Cheltenham FS', serif; /* Apply Cheltenham FS font */}
+/* Adjust heading size for "Enhance Teaching With Advanced Strategies" */
+h1.display-4 {    font-size: 2rem; /* Adjust font size to fit the text properly */
+    white-space: normal; /* Allow the text to break into multiple lines /    overflow: hidden; / Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows /    padding: 0 10px; / Optional: add padding to prevent text from touching the edges */
+}
+/* Semi-circle button for "Get Started" */.btn-get-started {
+                                              font-family: 'Abhaya Libre', serif;    border-radius: 30px; /* Creates the semi-circle effect */
+                                              padding: 15px 40px;    background-color: #d9d9d9; /* Set the button background color */
+                                              border: none;    color: black; /* Set text color to black */
+                                              text-transform: uppercase;    letter-spacing: 1px;
+                                              transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for color */}
+
+.btn-get-started:hover {    background-color: #b3b3b3; /* Darken the button color on hover */
+    color: black; /* Ensure text stays black on hover */}
+/* Adjust the font size dynamically for smaller screens to prevent overflow */
+@media screen and (max-width: 768px) {    .square-background {
+    padding: 8px 16px; /* Adjust padding for smaller screens */    }
+    h1.display-4 {
+        font-size: 1.5rem; /* Reduce font size on smaller screens */    }
+}
+@media screen and (max-width: 480px) {    h1.display-4 {
+    font-size: 1.2rem; /* Further reduce font size for very small screens */    }
+}/* Apply Aboreto font to the headers in Contact and Quick Links sections */
+footer .col-md-4 h3 {    font-family: 'Aboreto', serif; /* Apply Aboreto font to headers */
+}
+/* Apply Abhaya Libre SemiBold to Quick Links list items */footer .col-md-4 ul li a {
+                                                               font-family: 'Abhaya Libre', serif; /* Apply Abhaya Libre to links /    font-weight: 600; / SemiBold font weight */
+                                                               color: #000; /* Set text color to black /    text-decoration: none; / Remove underline */
+                                                           }
+/* Apply Abhaya Libre font to Tel and Email under Contact */footer .col-md-4 p {
+                                                                font-family: 'Abhaya Libre', serif; /* Apply Abhaya Libre font to text */}
+/* Optional: Adjust link hover color for Quick Links */
+footer .col-md-4 ul li a:hover {    color: #0056b3; /* Change color on hover */
+}
