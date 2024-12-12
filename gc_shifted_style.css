@@ -79,7 +79,7 @@ body {
 }
 
 .get-recommendation-2 .text-container .input-table td.input-cell input {
-  width: 100%;
+  width: 262px;
   box-sizing: border-box;
   padding: 15px 25px;
   font-size: 14px;
@@ -225,13 +225,19 @@ body {
   position: absolute;
   background-color: #ffffff;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 20px;
   z-index: 99;
-  width: 85%;
+  width: 220px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Abhaya Libre";
   font-size: 14px;
+  max-height: 165px;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 
 .get-recommendation-2

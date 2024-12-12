@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,11 +9,6 @@
 
 <body>
   <div class="get-recommendation-2">
-    <!-- Image Container Start -->
-    <div class="image-container">
-      <img src="Images/image 4.png" alt="Image" />
-    </div>
-    <!-- Image Container End -->
 
     <!-- Text Container Start -->
     <div class="text-container">
@@ -34,7 +29,7 @@
 
             <div>
               <td><label for="CName">Course Name</label></td>
-              <td><input type="text" id="Cname" name="Cname" placeholder="Enter the course name"></td>
+              <td  class="input-cell"><input type="text" id="Cname" name="Cname" placeholder="Enter the course name"  class="form-input"></td>
             </div>
 
           <!-- Teaching Mode Start -->
@@ -87,7 +82,6 @@
                   <option value="" disabled selected id="select-placeholder">
                     Select the course duration
                   </option>
-                  <option value="" disabled selected>Select the course duration</option>
                   <option value="short">Short(Less than 1 month)</option>
                   <option value="med">Medium(1-3 months)</option>
                   <option value="long">Long(4 months and above)</option>
@@ -125,7 +119,7 @@
 
             <div>
               <td><label for="CC">Course Contents</label></td>
-              <td><input type="text" id="CC" name="CC" placeholder="Enter the course contents"></td>
+              <td class="input-cell"><input type="text" id="CC" name="CC" placeholder="Enter the course contents" class="form-input"></td>
             </div>
 
           </tr>
@@ -156,7 +150,6 @@
                   <option value="" disabled selected id="select-placeholder">
                     Select percentage
                   </option>
-                  <option value="" disabled selected>Select percentage</option>
                   <option value="lowest">0%-50%</option>
                   <option value="second-lowest">51%-70%</option>
                   <option value="second-highest">71%-89%</option>
@@ -172,7 +165,7 @@
           <tr>
             <div>
               <td><label for="CSize">Class Size</label></td>
-              <td><input type="text" id="CSize" name="CSize" placeholder="Enter the class size eg.30"></td>
+              <td class="input-cell"><input type="text" id="CSize" name="CSize" placeholder="Enter the class size eg.30"  class="form-input"></td>
             </div>
 
           </tr>
@@ -190,6 +183,12 @@
       <!-- Form End -->
     </div>
     <!-- Text Container End -->
+
+    <!-- Image Container Start -->
+    <div class="image-container">
+      <img src="Images/image 4.png" alt="Image" />
+    </div>
+    <!-- Image Container End -->
   </div>
 
   <script>
