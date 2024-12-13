@@ -1,0 +1,575 @@
+/*** Get Recommendation - Page 3 ***/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f1f1f1;
+}
+
+.get-recommendation-2 {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-family: "Abhaya Libre";
+  align-items: stretch;
+}
+
+/*** Image Container ***/
+.get-recommendation-2 .image-container {
+  width: 30%;
+  height: auto;
+  flex-grow: 1;
+}
+
+.get-recommendation-2 .image-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/*** Text Container ***/
+.get-recommendation-2 .text-container {
+  width: 70%;
+  padding: 50px 70px 30px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.get-recommendation-2 .text-container h1#f30 {
+  font-weight: normal;
+  color: #363636;
+  font-size: 30px;
+  margin: 5px;
+}
+
+.get-recommendation-2 .text-container h2#f18 {
+  font-weight: normal;
+  color: #363636;
+  font-size: 18px;
+}
+
+/*** Table 1 (Top) - Input Table ***/
+.get-recommendation-2 .text-container .input-table {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.get-recommendation-2 .text-container .input-table td {
+  padding-bottom: 15px;
+}
+
+.get-recommendation-2 .text-container .input-table td:first-child {
+  width: 30%;
+}
+
+.get-recommendation-2 .text-container .input-table td:nth-child(3) {
+  padding-left: 40px;
+  width: 30%;
+}
+
+.get-recommendation-2 .text-container .input-table td.input-cell {
+  width: 30%;
+  padding-left: 5px;
+}
+
+.get-recommendation-2 .text-container .input-table input {
+  width: 262px;
+  box-sizing: border-box;
+  padding: 15px 25px;
+  font-size: 14px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  border: none;
+  font-family: "Abhaya Libre";
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  td.input-cell
+  input.form-input:focus {
+  outline: none;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  input.form-input.error {
+  border: 1.5px solid #ef0000;
+}
+
+.get-recommendation-2 .text-container label {
+  color: #8a8a8a;
+  font-size: 16px;
+}
+
+/*** Special Selection Input ***/
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container {
+  position: relative;
+  font-family: Arial;
+  width: 100%;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  select {
+  display: none;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 12px;
+  z-index: 10;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-arrow
+  i {
+  font-size: 14px;
+  color: #000000;
+  transition: transform 0.3s ease;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-arrow-active
+  i {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-selected {
+  color: #363636;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 50px;
+  border: none;
+  font-family: "Abhaya Libre";
+  padding: 15px 35px 15px 25px;
+  width: 200px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-selected.error {
+  border: 1.5px solid #ef0000;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-selected
+  .select-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  width: 90%;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-items {
+  margin-top: 2px;
+  position: absolute;
+  background-color: #ffffff;
+  top: 100%;
+  left: 20px;
+  z-index: 99;
+  width: 220px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Abhaya Libre";
+  font-size: 14px;
+  max-height: 165px;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-items
+  div {
+  color: #363636;
+  cursor: pointer;
+  user-select: none;
+  background-color: #ffffff;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding-left: 20px;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-items
+  div:hover {
+  background-color: #ebebeb !important;
+  font-weight: bold;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-items
+  div.same-as-selected {
+  background-color: #ffffff;
+  color: #363636;
+  font-weight: bold;
+  border-left: 4px solid #e6b584 !important;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .input-cell
+  .select-container
+  .select-hide {
+  display: none;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .select-container
+  .select-arrow {
+  padding-right: 8px;
+}
+
+.get-recommendation-2
+  .text-container
+  .input-table
+  .select-container
+  .select-arrow
+  i {
+  color: #363636;
+}
+
+/*** Table 2 (Bottom) - Teaching Style Preference ***/
+.get-recommendation-2 .text-container .teaching-style-preference {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+
+.get-recommendation-2 .text-container .teaching-style-preference h3 {
+  color: #8a8a8a;
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.get-recommendation-2 .text-container .teaching-style-preference .label-box {
+  background-color: #ffffff;
+  color: #363636;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.get-recommendation-2 .text-container .teaching-style-preference .same-row {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin: 0 10px 0 10px;
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .same-row
+  td:first-child,
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .same-row
+  td:nth-child(3) {
+  width: fit-content;
+  vertical-align: middle;
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .same-row
+  td:nth-child(3) {
+  margin-left: 60px;
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .same-row
+  td:nth-child(2),
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .same-row
+  td:last-child {
+  width: 100%;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .same-row
+  td.other {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .same-row
+  td.other
+  input {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  font-family: "Abhaya Libre";
+  padding: 5px 0 5px 10px;
+  width: 100%;
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .same-row
+  td.other
+  input:focus {
+  outline: none;
+}
+
+/*** Special Checbox ***/
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .checkbox-wrapper-23
+  *,
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .checkbox-wrapper-23
+  *:after,
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .checkbox-wrapper-23
+  *:before {
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .checkbox-wrapper-23
+  input {
+  position: absolute;
+  opacity: 0;
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .checkbox-wrapper-23
+  input:checked
+  + label
+  svg
+  path {
+  stroke-dashoffset: 0;
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .checkbox-wrapper-23
+  input:focus
+  + label {
+  transform: scale(1.03);
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .checkbox-wrapper-23
+  input
+  + label {
+  display: block;
+  border: none;
+  background-color: #d9d9d9;
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.get-recommendation-2
+  .text-container
+  .teaching-style-preference
+  .checkbox-wrapper-23
+  input
+  + label:active {
+  transform: scale(1.05);
+  border-radius: 12px;
+}
+
+.text-container
+  .teaching-style-preference
+  .checkbox-wrapper-23
+  input
+  + label
+  svg {
+  pointer-events: none;
+  padding: 5%;
+}
+
+.text-container
+  .teaching-style-preference
+  .checkbox-wrapper-23
+  input
+  + label
+  svg
+  path {
+  fill: none;
+  stroke: #333;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 101;
+  transition: all 250ms cubic-bezier(1, 0, 0.37, 0.91);
+}
+
+.get-recommendation-2 .text-container .teaching-style-preference .small-text {
+  text-align: right;
+  color: #8a8a8a;
+  font-size: 10px;
+}
+
+/*** Buttons (Bottom) **/
+.get-recommendation-2 .text-container .same-row-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 50px 0 10px 0;
+}
+
+.get-recommendation-2 .text-container .sbm-btn {
+  background-color: #d9d9d9;
+  color: #363636;
+  border-radius: 200px;
+  width: 213px;
+  height: 58px;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  font-family: "Abhaya Libre";
+  transition: all 0.75s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.get-recommendation-2 .text-container .back-btn {
+  background-color: none;
+  color: #363636;
+  height: 58px;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  font-family: "Abhaya Libre";
+  transition: all 0.75s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.get-recommendation-2 .text-container .sbm-btn:hover {
+  background-color: #e6b584;
+}
+
+.get-recommendation-2 .text-container .back-btn:hover {
+  color: #e6b584;
+}
+
+/*** Error Message ***/
+.error-message {
+  color: #ef0000;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
+  display: none;
+}

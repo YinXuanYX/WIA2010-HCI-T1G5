@@ -1,0 +1,662 @@
+/*** Navbar ***/
+.nav-bar {
+  position: relative;
+  margin-top: 17px;
+  padding: 0 3rem;
+  transition: 0.5s;
+  z-index: 9999;
+}
+
+.nav-bar.sticky-top {
+  position: sticky;
+  padding: 0;
+  z-index: 9999;
+}
+
+.nav-bar .navbar {
+  box-shadow: rgba(0, 0, 0, 0.4) 2.4px 2.4px 3.2px;
+  height: 65px;
+  background-color: #e3dcd4;
+}
+
+.nav-bar .navbar .navbar-nav {
+  align-items: center;
+}
+
+.nav-bar .navbar .navbar-nav .nav-item {
+  font-family: "Aboreto";
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000000;
+  text-wrap: nowrap;
+  margin: 8px;
+}
+
+.nav-bar .navbar .navbar-nav .nav-item.active {
+  background-color: #363636;
+  color: #fffdfd;
+  padding: 5px 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.nav-bar .navbar .navbar-nav .nav-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: -17px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 2px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 2.4px 2.4px 3.2px;
+}
+
+.nav-bar .navbar .nav-search-bar input {
+  height: 10px;
+  width: 200px;
+  border-radius: 20px;
+  font-family: "Aboreto";
+  font-size: 10px;
+}
+
+.nav-bar .navbar .nav-search-bar input:focus {
+  box-shadow: none;
+}
+
+/*** Get recommendation - Page 4 ***/
+.get-recommendation-4 {
+  background-color: #f1f1f1;
+}
+
+/*** Strategy Selection ***/
+#strategy-selection {
+  font-family: "Abhaya Libre";
+  margin: auto;
+  width: 90%;
+  margin-top: 20px;
+}
+
+#strategy-selection h1 {
+  font-size: 35px;
+  font-weight: lighter;
+}
+
+#strategy-selection h1 span {
+  font-weight: 600;
+}
+
+#strategy-selection h2 {
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+
+#strategy-selection .row .col {
+  padding: 0 35px;
+  position: relative;
+}
+
+#strategy-selection .row .col:first-child {
+  padding-left: 0 !important;
+}
+
+#strategy-selection .row .col:last-child {
+  padding-right: 0 !important;
+}
+
+#strategy-selection .row .col .img-box {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+#strategy-selection .row .col .img-box img {
+  width: 100%;
+  height: 87px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+}
+
+#strategy-selection .row .col .img-box.active img {
+  outline: 5px solid #363636;
+}
+
+#strategy-selection .row .col .img-box .black-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  top: 70%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  color: #f1f1f1;
+  background-color: #363636;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/*** Strategy Details ***/
+#strategy-details {
+  font-family: "Abhaya Libre";
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*** Strategy Top Section ***/
+#strategy-details .strategy-top-section {
+  display: flex;
+  margin-bottom: 40px;
+  width: 100%;
+  align-items: stretch;
+}
+
+#strategy-details .strategy-top-section .strategy-image {
+  width: 50%;
+  display: flex;
+}
+
+#strategy-details .strategy-top-section .strategy-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#strategy-details .strategy-top-section .strategy-content {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#strategy-details .strategy-top-section .strategy-content .header {
+  color: #808080;
+  font-size: 14px;
+  position: absolute;
+  right: 60px;
+  top: 0;
+}
+
+#strategy-details .strategy-top-section .strategy-content .introduction {
+  padding: 0;
+  width: 100%;
+}
+
+#strategy-details .strategy-top-section .strategy-content .introduction .title {
+  margin-bottom: 10px;
+  color: #363636;
+  position: relative;
+  width: 100%;
+  padding-top: 50px;
+}
+
+#strategy-details
+  .strategy-top-section
+  .strategy-content
+  .introduction
+  .title
+  h2 {
+  font-size: 25px;
+  padding: 0 30px;
+}
+
+#strategy-details
+  .strategy-top-section
+  .strategy-content
+  .introduction
+  .title
+  h1 {
+  font-size: 30px;
+  color: #f1f1f1;
+  background-color: #363636;
+  padding: 5px 30px;
+  width: 90%;
+}
+
+#strategy-details .strategy-top-section .strategy-content .introduction p {
+  background-color: #ffffff;
+  width: 90%;
+  padding: 20px 30px;
+  margin-top: 20px;
+}
+
+/*** Strategy Benefits Section ***/
+.strategy-benefits-section {
+  padding-bottom: 60px;
+  margin-top: 40px;
+}
+
+.strategy-benefits-section .title {
+  text-align: left;
+  position: relative;
+  width: 100%;
+}
+
+.strategy-benefits-section .title::before,
+.strategy-benefits-section .title::after {
+  content: "";
+  display: block;
+  background-color: #d9d9d9;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+}
+
+.strategy-benefits-section .title::before {
+  height: 4px;
+  top: calc(68% - 10px);
+}
+
+.strategy-benefits-section .title::after {
+  height: 10px;
+  top: calc(52% + 10px);
+}
+
+.strategy-benefits-section .title h2 {
+  text-align: right;
+}
+
+.strategy-benefits-section .title .title-main {
+  width: 23%;
+  font-weight: bold;
+  font-size: 24px;
+  color: #363636;
+  display: block;
+  margin: 2px;
+}
+
+.strategy-benefits-section .title .title-highlight {
+  width: 28%;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f1f1f1;
+  background-color: #363636;
+  padding: 0px 40px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.strategy-benefits-section .benefits-container {
+  display: flex;
+  justify-content: space-between;
+  width: 82%;
+  position: relative;
+  margin-left: auto;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.strategy-benefits-section .benefits-container .benefit-card {
+  text-align: left;
+  flex: 1;
+  width: 25%;
+}
+
+.strategy-benefits-section .benefits-container .benefit-card img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.strategy-benefits-section .benefits-container .benefit-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.strategy-benefits-section .benefits-container .benefit-card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/*** Strategy Implementation Section Header 
+      && Feedback Section Header ***/
+.strategy-implementation-section-header {
+  background-color: #e3dcd4;
+  margin-bottom: 40px;
+}
+
+.strategy-feedback-section-header {
+  background-color: #d9d9d9;
+}
+.strategy-implementation-section-header,
+.strategy-feedback-section-header {
+  text-align: center;
+  padding: 0px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  align-items: center;
+}
+
+.strategy-implementation-section-header .container,
+.strategy-feedback-section-header .container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.strategy-implementation-section-header .container .icon img,
+.strategy-feedback-section-header .container .icon img {
+  width: 80%;
+}
+
+.strategy-implementation-section-header .container .title,
+.strategy-feedback-section-header .container .title {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.strategy-implementation-section-header .container .title h2,
+.strategy-feedback-section-header .container .title h2 {
+  font-weight: bold;
+  font-size: 26px;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.strategy-implementation-section-header .container .title p,
+.strategy-feedback-section-header .container .title p {
+  color: #808080;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+/*** Strategy Implementation Section Expand Box ***/
+.strategy-implementation-section-expand-box {
+  width: 75%;
+  margin: 20px auto 0 auto;
+  overflow: hidden;
+}
+
+.strategy-implementation-section-expand-box .header {
+  background-color: #363636;
+  color: #d9d9d9;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.strategy-implementation-section-expand-box .header button {
+  background: none;
+  border: none;
+  color: #d9d9d9;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.strategy-implementation-section-expand-box .details {
+  padding: 15px;
+  width: 100%;
+}
+
+.strategy-implementation-section-expand-box .details.hidden {
+  display: none;
+}
+
+.strategy-implementation-section-expand-box .details .teaching-modules,
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-methods-and-activities {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0px auto 20px auto;
+}
+
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-modules
+  > div:first-child,
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-methods-and-activities
+  > div:nth-child(2) {
+  width: 30%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-modules
+  > div:first-child
+  img,
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-methods-and-activities
+  > div:nth-child(2)
+  img {
+  margin: 15px;
+  width: 30%;
+}
+
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-modules
+  > div:nth-child(2),
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-methods-and-activities
+  > div:first-child {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-modules
+  > div:nth-child(2) {
+  background-color: #ffffff;
+}
+
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-methods-and-activities
+  > div:first-child {
+  background-color: #d9d9d9;
+}
+
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-modules
+  > div:nth-child(2)
+  ol {
+  margin: 20px;
+}
+
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-methods-and-activities
+  > div:first-child
+  ol {
+  margin: 0 20px 20px 20px;
+}
+
+.strategy-implementation-section-expand-box
+  .details
+  .teaching-methods-and-activities
+  > div:first-child
+  h6 {
+  font-weight: bold;
+  padding: 20px 20px 5px 30px;
+  margin: 0;
+}
+
+/*** Strategy Implementation Section Important Tips ***/
+.strategy-implementation-section-important-tips {
+  background-color: #e3dcd4;
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  width: 80%;
+  margin: 40px auto 50px auto;
+}
+
+.strategy-implementation-section-important-tips .title {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 40px;
+  font-size: 16px;
+}
+
+.strategy-implementation-section-important-tips .title img {
+  width: 75%;
+}
+
+.strategy-implementation-section-important-tips ul {
+  padding: 0 60px;
+  font-size: 14px;
+}
+
+/*** Strategy Teaching Video Sample Section ***/
+.strategy-teaching-video-sample-section {
+  width: 75%;
+  margin: auto;
+}
+
+.strategy-teaching-video-sample-section .title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.strategy-teaching-video-sample-section .same-row {
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.strategy-teaching-video-sample-section .same-row button,
+.detailed-feedback button {
+  border-radius: 50px;
+  background-color: #d9d9d9;
+  color: #363636;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  position: relative;
+  bottom: 15px;
+}
+
+.strategy-teaching-video-sample-section .same-row button:hover,
+.detailed-feedback button:hover {
+  background-color: #363636;
+  color: #d9d9d9;
+}
+
+/*** Feedback Container ***/
+.strategy-feedback-section-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "emoji ."
+    "arrow detailed";
+  box-sizing: border-box;
+}
+
+.strategy-feedback-section-container .emoji-feedback {
+  grid-area: emoji;
+  background-color: #ffffff;
+  margin: 30px 0 10px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.strategy-feedback-section-container .detailed-feedback {
+  grid-area: detailed;
+  background-color: #ffffff;
+  padding: 40px;
+  margin: 30px 50px 50px 30px;
+}
+
+.strategy-feedback-section-container h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #363636;
+}
+
+.strategy-feedback-section-container .emoji-feedback .emojis {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.strategy-feedback-section-container .emoji-feedback .emojis .emoji {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin: 0 25px 0 10px;
+}
+
+.strategy-feedback-section-container .emoji-feedback .emojis .emoji:hover {
+  transform: scale(1.2);
+}
+
+.strategy-feedback-section-container .emoji-feedback .emojis .emoji.selected {
+  font-size: 36px;
+  transition: transform 0.2s, font-size 0.2s, color 0.2s;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.strategy-feedback-section-container .arrow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  grid-area: arrow;
+}
+
+.strategy-feedback-section-container .arrow img {
+  height: 20%;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+
+.strategy-feedback-section-container .detailed-feedback textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #f1f1f1;
+  background-color: #f1f1f1;
+  font-size: 14px;
+  margin-bottom: 20px;
+  resize: none;
+}
+
+.strategy-feedback-section-container .detailed-feedback textarea:focus {
+  outline: none;
+}
+
+.strategy-feedback-section-container .detailed-feedback button {
+  margin-left: auto;
+  display: block;
+}
