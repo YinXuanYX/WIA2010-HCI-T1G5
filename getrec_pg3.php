@@ -43,16 +43,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET)) {
     $_SESSION['TEACHING_MODE'] = $_GET['TM'];
     $_SESSION['COURSE_LEVEL'] = $_GET['Clevel'];
     $_SESSION['COURSE_DURATION'] = $_GET['CD'];
+    $_SESSION['TERM'] = $_SESSION['COURSE_DURATION'];
     $_SESSION['FIELD_OF_STUDY'] = $_GET['FOS'];
     $_SESSION['COURSE_CONTENTS'] = $_GET['CC'];
     $_SESSION['AVERAGE_STUDENT_SCORE'] = $_GET['ASS'];
     $_SESSION['STUDENT_PASSING_RATE'] = $_GET['SPP'];
     $_SESSION['CLASS_SIZE'] = $_GET['Csize'];
     if ($_SESSION['CLASS_SIZE'] > 40) {
-      $class_size = 2;
+      $class_size = 4;
     } else if ($_SESSION['CLASS_SIZE'] > 30) {
+      $class_size = 3;
+    } else if ($_SESSION['CLASS_SIZE'] > 20){
+      $class_size = 2;
+    } else if ($_SESSION['CLASS_SIZE'] > 10){
       $class_size = 1;
-    } else {
+    } else{
       $class_size = 0;
     }
     $_SESSION['CONVERTED_CLASS_SIZE'] = $class_size;
@@ -89,7 +94,7 @@ if (isset($errors['CC'])) {
 
 <head>
   <title>Get Recommendation - Page 2</title>
-  <link rel="stylesheet" href="gc_style3.css" />
+  <link rel="stylesheet" href="css/gc_style3.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <!-- Bootstrap Libraries Stylesheet -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"

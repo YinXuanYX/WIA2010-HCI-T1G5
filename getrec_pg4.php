@@ -1,4 +1,6 @@
 <?php
+require_once "config.php";
+
 session_start();
 $strategy1 = strtolower(str_replace(" ", "-", $_SESSION['strategy-1']));
 $strategy2 = strtolower(str_replace(" ", "-", $_SESSION['strategy-2']));
@@ -6,9 +8,135 @@ $strategy3 = strtolower(str_replace(" ", "-", $_SESSION['strategy-3']));
 
 if (isset($_GET['strategy'])) {
     $strategy = $_GET['strategy'];
+} else {
+    $strategy = $strategy1;
 }
 
 $strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
+
+// DB
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM Strategy WHERE `strategy-tag` = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $strategy);
+$stmt->execute();
+$result = $stmt->get_result();
+$duration = $_SESSION['TERM'];
+
+while ($row = $result->fetch_assoc()) {
+    $introduction = $row['strategy-introduction'];
+    $image = $row['strategy-img'];
+    $benefit1 = $row['strategy-benefit-1-name'];
+    $benefit2 = $row['strategy-benefit-2-name'];
+    $benefit3 = $row['strategy-benefit-3-name'];
+    $benefit1_desc = $row['strategy-benefit-1-desc'];
+    $benefit2_desc = $row['strategy-benefit-2-desc'];
+    $benefit3_desc = $row['strategy-benefit-3-desc'];
+    $benefit1_img = $row['strategy-benefit-1-img'];
+    $benefit2_img = $row['strategy-benefit-2-img'];
+    $benefit3_img = $row['strategy-benefit-3-img'];
+    $phase1 = $row["strategy-phase-1-activities-$duration"];
+    $phase2 = $row["strategy-phase-2-activities-$duration"];
+    $phase3 = $row["strategy-phase-3-activities-$duration"];
+    $tips = $row['strategy-important-tips'];
+    $video = $row['strategy-video-link'];
+}
+
+$stmt->close();
+
+$phase1_title = processPhaseContent($phase1)['title'];
+$phase1_list = processPhaseContent($phase1)['listItems'];
+
+$phase2_title = processPhaseContent($phase2)['title'];
+$phase2_list = processPhaseContent($phase2)['listItems'];
+
+$phase3_title = processPhaseContent($phase3)['title'];
+$phase3_list = processPhaseContent($phase3)['listItems'];
+
+$tipsItems = explode('.', $tips);
+$tipsItems = array_filter($tipsItems, function ($item) {
+    return !empty(trim($item));
+});
+function processPhaseContent($content)
+{
+    // Step 1: Extract the title 
+    $titleEndPos = strpos($content, ';');
+    if ($titleEndPos !== false) {
+        $title = substr($content, 0, $titleEndPos);  
+        $remainingContent = substr($content, $titleEndPos + 1); 
+    } else {
+        $title = $content; 
+        $remainingContent = '';  
+    }
+
+    // Step 2: Split the remaining content by periods (.) into list items
+    $listItems = explode('.', $remainingContent);
+    $listItems = array_filter($listItems, function ($item) {
+        return !empty(trim($item));
+    });
+
+    return [
+        'title' => $title,
+        'listItems' => $listItems
+    ];
+}
+
+// Get Image 1
+$sql = "SELECT * FROM Strategy WHERE `strategy-tag` = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $strategy1);
+$stmt->execute();
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+    $image1 = $row['strategy-img'];
+}
+$stmt->close();
+
+// Get Image 2
+$sql = "SELECT * FROM Strategy WHERE `strategy-tag` = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $strategy2);
+$stmt->execute();
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+    $image2 = $row['strategy-img'];
+}
+$stmt->close();
+
+// Get Image 3
+$sql = "SELECT * FROM Strategy WHERE `strategy-tag` = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $strategy3);
+$stmt->execute();
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+    $image3 = $row['strategy-img'];
+}
+$stmt->close();
+$conn->close();
+
+unset($_SESSION['YEAR_OF_EXPERIENCE']);
+unset($_SESSION['CONVERTED_YEAR_OF_EXPERIENCE']);
+unset($_SESSION['AGE']);
+unset($_SESSION['PRIMARY_ROLE']);
+unset($_SESSION['GENDER']);
+unset($_SESSION['SCHOOL_TYPE']);
+unset($_SESSION['COURSE_NAME']);
+unset($_SESSION['TEACHING_MODE']);
+unset($_SESSION['COURSE_LEVEL']);
+unset($_SESSION['COURSE_DURATION']);
+unset($_SESSION['FIELD_OF_STUDY']);
+unset($_SESSION['COURSE_CONTENTS']);
+unset($_SESSION['AVERAGE_STUDENT_SCORE']);
+unset($_SESSION['STUDENT_PASSING_RATE']);
+unset($_SESSION['CLASS_SIZE']);
+
 ?>
 
 <!DOCTYPE html>
@@ -46,21 +174,21 @@ $strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
             <div class="row">
                 <div class="col col-md-4">
                     <div class="img-box" onclick="updateUrl('<?php echo $strategy1 ?>')">
-                        <img src="img/active-learning.png">
+                        <img src="img/<?php echo $image1; ?>">
                         <div class="black-box"><?php echo $_SESSION['strategy-1']; ?></div>
                         <input type="hidden" id="strategy1" name="strategy1" value="<?php echo $strategy1 ?>">
                     </div>
                 </div>
                 <div class="col col-md-4">
                     <div class="img-box" onclick="updateUrl('<?php echo $strategy2 ?>')">
-                        <img src="img/personalized-learning.png">
+                        <img src="img/<?php echo $image2; ?>">
                         <div class="black-box"><?php echo $_SESSION['strategy-2']; ?></div>
                         <input type="hidden" id="strategy2" name="strategy2" value="<?php echo $strategy2 ?>">
                     </div>
                 </div>
                 <div class="col col-md-4">
                     <div class="img-box" onclick="updateUrl('<?php echo $strategy3 ?>')">
-                        <img src="img/peer-teaching.png">
+                        <img src="img/<?php echo $image3; ?>">
                         <div class="black-box"><?php echo $_SESSION['strategy-3']; ?></div>
                         <input type="hidden" id="strategy3" name="strategy3" value="<?php echo $strategy3 ?>">
                     </div>
@@ -74,7 +202,7 @@ $strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
             <!-- Strategy Top Section Start -->
             <div class="strategy-top-section">
                 <div class="strategy-image">
-                    <img src="img/active-learning.png" alt="Two people discussing learning materials">
+                    <img src="img/<?php echo $image ?>" alt="">
                 </div>
                 <div class="strategy-content">
                     <div class="header">
@@ -83,15 +211,10 @@ $strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
                     <div class="introduction">
                         <div class="title">
                             <h2>You have chosen</h2>
-                            <h1><b><?php echo $strategyFullName;?> </b><small>strategy</small></h1>
+                            <h1><b><?php echo $strategyFullName; ?> </b><small>strategy</small></h1>
                         </div>
                         <p>
-                            When students engage in active learning, they are doing something besides passively
-                            learning.
-                            They will participate in small or large activities centered around writing, talking,
-                            problem-solving, and presentation. This method provides an opportunity for all students in a
-                            class to think and engage with course material and practice skills for learning, applying,
-                            synthesizing, or summarizing that material.
+                            <?php echo $introduction; ?>
                         </p>
                     </div>
                 </div>
@@ -106,25 +229,24 @@ $strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
                 </div>
                 <div class="benefits-container">
                     <div class="benefit-card">
-                        <img src="img/active-learning-benefit-1.png" alt="Icon for retention">
-                        <h3>Improved Retention and Understanding</h3>
+                        <img src="img/<?php echo $benefit1_img; ?>" alt="">
+                        <h3><?php echo $benefit1; ?></h3>
                         <p>
-                            Deeper level of engagement helps students retain information and understand complex concepts
-                            better than passive learning methods like lectures.
+                            <?php echo $benefit1_desc; ?>
                         </p>
                     </div>
                     <div class="benefit-card">
-                        <img src="img/active-learning-benefit-2.png" alt="Icon for critical thinking">
-                        <h3>Enhanced Critical Thinking</h3>
+                        <img src="img/<?php echo $benefit2_img; ?>" alt="">
+                        <h3><?php echo $benefit2; ?></h3>
                         <p>
-                            Helps students to approach problems creatively and develop solutions independently.
+                            <?php echo $benefit2_desc; ?>
                         </p>
                     </div>
                     <div class="benefit-card">
-                        <img src="img/active-learning-benefit-3.png" alt="Icon for engagement">
-                        <h3>Increased Student Engagement</h3>
+                        <img src="img/<?php echo $benefit3_img; ?>" alt="">
+                        <h3><?php echo $benefit3; ?></h3>
                         <p>
-                            Provides positive learning experience and higher levels of participation in class.
+                            <?php echo $benefit3_desc; ?>
                         </p>
                     </div>
                 </div>
@@ -170,11 +292,11 @@ $strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
                     </div>
                     <div class="teaching-methods-and-activities">
                         <div>
-                            <h6>Plan Active Sessions</h6>
+                            <h6><?php echo $phase1_title; ?></h6>
                             <ol>
-                                <li>Identify topics that benefit from active participation.</li>
-                                <li>Schedule regular active learning sessions.</li>
-                                <li>Prepare varied materials (debates, group discussions, etc.).</li>
+                                <?php foreach ($phase1_list as $list)
+                                    echo "<li>$list</li>";
+                                ?>
                             </ol>
                         </div>
                         <div>Teaching Methods & Activities<br />
@@ -203,11 +325,11 @@ $strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
                     </div>
                     <div class="teaching-methods-and-activities">
                         <div>
-                            <h6>Implement Engagement Activities</h6>
+                            <h6><?php echo $phase2_title; ?></h6>
                             <ol>
-                                <li>Begin each session with a brief introduction and goals.</li>
-                                <li>Facilitate activities that require active student involvement.</li>
-                                <li>Guide discussions and ask questions to deepen understanding.</li>
+                                <?php foreach ($phase2_list as $list)
+                                    echo "<li>$list</li>";
+                                ?>
                             </ol>
                         </div>
                         <div>Teaching Methods & Activities<br />
@@ -236,11 +358,11 @@ $strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
                     </div>
                     <div class="teaching-methods-and-activities">
                         <div>
-                            <h6>Evaluate and Reflect</h6>
+                            <h6><?php echo $phase3_title; ?></h6>
                             <ol>
-                                <li>Gather student feedback on each session’s effectiveness.</li>
-                                <li>Analyze which activities were most engaging.</li>
-                                <li>Adjust future plans based on feedback and observations.</li>
+                                <?php foreach ($phase3_list as $list)
+                                    echo "<li>$list</li>";
+                                ?>
                             </ol>
                         </div>
                         <div>Teaching Methods & Activities<br />
@@ -259,9 +381,9 @@ $strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
                 </div>
                 <div>
                     <ul>
-                        <li>Engage all students, especially quieter ones.</li>
-                        <li>Use diverse activities to maintain interest.</li>
-                        <li>Provide clear examples to illustrate points.</li>
+                        <?php foreach ($tipsItems as $tip)
+                            echo "<li>$tip</li>";
+                        ?>
                     </ul>
                 </div>
             </div>
@@ -273,8 +395,7 @@ $strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
             <div class="strategy-teaching-video-sample-section">
                 <h2 class="title">Teaching Video Sample</h2>
                 <div class="d-flex flex-row same-row">
-                    <iframe width="470" height="255" src="https://www.youtube.com/embed/D8Wc3eSRaLE?si=q2PYBXyJt70UvQ7_"
-                        title="Active Learning" frameborder="0"
+                    <iframe width="470" height="255" src="<?php echo $video; ?>" title="Active Learning" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <button>Export into PDF</button>

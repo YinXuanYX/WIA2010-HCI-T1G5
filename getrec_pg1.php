@@ -3,7 +3,7 @@
 
 <head>
     <title>Get Recommendation pg1</title>
-    <link rel="stylesheet" href="gc_style.css">
+    <link rel="stylesheet" href="css/gc_style.css">
     <link rel="stylesheet" href="css/hci.css">
 </head>
 

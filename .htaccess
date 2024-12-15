@@ -1,4 +1,0 @@
-# Enable mod_rewrite
-RewriteEngine On
-
-RewriteRule ^get-recommendation-2/$ getrec_pg2.php [L]

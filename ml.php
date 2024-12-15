@@ -227,7 +227,7 @@ try {
     }
     //print_r($_SESSION);
 
-    header("Location: get-recommendation-4.php");
+    header("Location: getrec_pg4.php");
 
     // Get probability scores
     // $probabilities = $recommender->getProbabilities($features);
