@@ -1,3 +1,16 @@
+<?php
+session_start();
+$strategy1 = strtolower(str_replace(" ", "-", $_SESSION['strategy-1']));
+$strategy2 = strtolower(str_replace(" ", "-", $_SESSION['strategy-2']));
+$strategy3 = strtolower(str_replace(" ", "-", $_SESSION['strategy-3']));
+
+if (isset($_GET['strategy'])) {
+    $strategy = $_GET['strategy'];
+}
+
+$strategyFullName = ucfirst(str_replace('-', ' ', $strategy));
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,30 +34,9 @@
 <body>
     <div class="get-recommendation-4">
 
-        <!-- Navbar Start -->
-        <div class="container-fluid nav-bar bg-transparent">
-            <nav class="navbar navbar-expand-lg py-0 px-4">
-                <!-- Search Start -->
-                <div class="col-md-4 nav-search-bar px-4">
-                    <input type="text" class="form-control border-0 py-3" placeholder="SEARCH">
-                </div>
-                <!-- Search End -->
-
-                <!-- Menu Button Start -->
-                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto px-2">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link active">Get Recommendation</a>
-                        <a href="about.html" class="nav-item nav-link">Features</a>
-                        <a href="about.html" class="nav-item nav-link">About Us</a>
-                        <a href="about.html" class="nav-item nav-link">Contact</a>
-                        <a href="about.html" class="nav-item nav-link">Sign In/Up</a>
-                    </div>
-                </div>
-                <!-- Menu Button End -->
-            </nav>
-        </div>
-        <!-- Navbar End -->
+        <?php
+        include "header.php"
+            ?>
 
         <!-- Strategies Selection Start -->
         <div class="p-5" id="strategy-selection">
@@ -53,21 +45,24 @@
 
             <div class="row">
                 <div class="col col-md-4">
-                    <div class="img-box active" onclick="updateUrl('active-learning',this)">
+                    <div class="img-box" onclick="updateUrl('<?php echo $strategy1 ?>')">
                         <img src="img/active-learning.png">
-                        <div class="black-box">Active Learning</div>
+                        <div class="black-box"><?php echo $_SESSION['strategy-1']; ?></div>
+                        <input type="hidden" id="strategy1" name="strategy1" value="<?php echo $strategy1 ?>">
                     </div>
                 </div>
                 <div class="col col-md-4">
-                    <div class="img-box" onclick="updateUrl('personalized-learning',this)">
+                    <div class="img-box" onclick="updateUrl('<?php echo $strategy2 ?>')">
                         <img src="img/personalized-learning.png">
-                        <div class="black-box">Personalized Learning</div>
+                        <div class="black-box"><?php echo $_SESSION['strategy-2']; ?></div>
+                        <input type="hidden" id="strategy2" name="strategy2" value="<?php echo $strategy2 ?>">
                     </div>
                 </div>
                 <div class="col col-md-4">
-                    <div class="img-box" onclick="updateUrl('peer-teaching',this)">
+                    <div class="img-box" onclick="updateUrl('<?php echo $strategy3 ?>')">
                         <img src="img/peer-teaching.png">
-                        <div class="black-box">Peer Teaching</div>
+                        <div class="black-box"><?php echo $_SESSION['strategy-3']; ?></div>
+                        <input type="hidden" id="strategy3" name="strategy3" value="<?php echo $strategy3 ?>">
                     </div>
                 </div>
             </div>
@@ -88,7 +83,7 @@
                     <div class="introduction">
                         <div class="title">
                             <h2>You have chosen</h2>
-                            <h1><b>Active Learning </b><small>strategy</small></h1>
+                            <h1><b><?php echo $strategyFullName;?> </b><small>strategy</small></h1>
                         </div>
                         <p>
                             When students engage in active learning, they are doing something besides passively
@@ -337,6 +332,10 @@
         </div>
         <!-- Strategy Details End -->
 
+        <?php
+        include "footer.php"
+            ?>
+
 
 
         <!-- JavaScript Libraries -->
@@ -369,15 +368,35 @@
                 selected.classList.add('selected');
             }
 
-            function updateUrl(method, element) {
-                const allBoxes = document.querySelectorAll('.img-box');
-                allBoxes.forEach(box => {
-                    box.classList.remove('active');
-                });
-                element.classList.add('active');
-                const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + "?learning-method=" + method;
+            function updateUrl(method) {
+                const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + "?strategy=" + method;
                 window.history.pushState({ path: newUrl }, '', newUrl);
+                window.location.reload()
             }
+
+            window.onload = function () {
+                // Get the strategy value from the URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const strategyFromUrl = urlParams.get('strategy'); // Get the 'strategy' value from the URL
+
+                // Get all elements with the class 'img-box'
+                const allBoxes = document.querySelectorAll('.img-box');
+
+                // Loop through all boxes
+                allBoxes.forEach(box => {
+                    // Find the hidden input element inside the current box
+                    const hiddenInput = box.querySelector('input[type="hidden"]');
+                    if (hiddenInput) {
+                        // Get the value of the hidden input
+                        const strategyValue = hiddenInput.value;
+
+                        // If the URL's strategy matches the hidden input's value, add 'active' class
+                        if (strategyFromUrl && strategyFromUrl === strategyValue) {
+                            box.classList.add('active');
+                        }
+                    }
+                });
+            };
         </script>
 </body>
 

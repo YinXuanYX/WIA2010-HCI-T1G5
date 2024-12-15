@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #f1f1f1;
+  background-color: #f1f1f1 !important;
 }
 
 .get-recommendation-2 {
@@ -15,6 +15,11 @@ body {
   flex-direction: row;
   font-family: "Abhaya Libre";
   align-items: stretch;
+  
+}
+
+.get-recommendation-2 *, .get-recommendation-2::before, .get-recommendation-2::after{
+  box-sizing: content-box;
 }
 
 /*** Image Container ***/
@@ -40,6 +45,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.get-recommendation-2 .text-container .blank{
+  height: 90px;
 }
 
 .get-recommendation-2 .text-container h1#f30 {
@@ -196,8 +205,8 @@ body {
   .text-container
   .input-table
   .input-cell
-  .select-container
-  .select-selected.error {
+  .select-container.error
+  .select-selected {
   border: 1.5px solid #ef0000;
 }
 
@@ -411,6 +420,7 @@ body {
   font-family: "Abhaya Libre";
   padding: 5px 0 5px 10px;
   width: 100%;
+  font-size: 14px;
 }
 
 .get-recommendation-2
@@ -578,7 +588,7 @@ body {
 .error-message {
   color: #ef0000;
   font-size: 12px;
-  margin-top: 5px;
-  margin-left: 10px;
-  display: none;
+  margin: 5px 0 0 10px;
+  padding: 0;
+  line-height: 1;
 }

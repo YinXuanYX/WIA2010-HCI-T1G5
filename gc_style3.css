@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #f1f1f1;
+  background-color: #f1f1f1 !important;
 }
 
 .get-recommendation-2 {
@@ -15,6 +15,10 @@ body {
   flex-direction: row;
   font-family: "Abhaya Libre";
   align-items: stretch;
+}
+
+.get-recommendation-2 *, .get-recommendation-2::before, .get-recommendation-2::after{
+  box-sizing: content-box;
 }
 
 /*** Image Container ***/
@@ -36,7 +40,7 @@ body {
 /*** Text Container ***/
 .get-recommendation-2 .text-container {
   width: 70%;
-  padding: 50px 70px 30px 80px;
+  padding: 120px 70px 30px 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -197,8 +201,8 @@ body {
   .text-container
   .input-table
   .input-cell
-  .select-container
-  .select-selected.error {
+  .select-container.error
+  .select-selected {
   border: 1.5px solid #ef0000;
 }
 
@@ -518,10 +522,11 @@ body {
   transition: all 250ms cubic-bezier(1, 0, 0.37, 0.91);
 }
 
-.get-recommendation-2 .text-container .teaching-style-preference .small-text {
+.get-recommendation-2 .text-container .small-text {
   text-align: right;
   color: #8a8a8a;
   font-size: 10px;
+  margin: 5px 20px 0 0;
 }
 
 /*** Buttons (Bottom) **/
@@ -569,7 +574,7 @@ body {
 .error-message {
   color: #ef0000;
   font-size: 12px;
-  margin-top: 5px;
-  margin-left: 10px;
-  display: none;
+  margin: 5px 0 0 10px;
+  padding: 0;
+  line-height: 1;
 }

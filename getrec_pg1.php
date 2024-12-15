@@ -17,7 +17,7 @@
         <div class="text-container">
             <h1>Would you like a</h1>
             <h2>Personalized Teaching Strategies Recommendation?</h2>
-            <button class="button">Start Now</a></button>
+            <button class="button" onclick="location.href='getrec_pg2.php'">Start Now</button>
         </div>
     </div>
 

@@ -2,15 +2,55 @@
 // Start the session
 session_start();
 
-// Store form data in session
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $_SESSION['YEAR_OF_EXPERIENCE'] = $_POST['YOE'];
-  $_SESSION['AGE'] = $_POST['Age'];
-  $_SESSION['PRIMARY_ROLE'] = $_POST['PR'];
-  $_SESSION['GENDER'] = $_POST['GR'];
-  $_SESSION['SCHOOL_TYPE'] = $_POST['ST'];
-  header("Location: getrec_pg3.php");
+// Initialize an array to store error messages
+$errors = [];
+
+// Store form data in session if validation passes
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET)) {
+  // Validation
+  if (!isset($_GET['YOE']) || $_GET['YOE'] === '') {
+    $errors['YOE'] = 'Years of experience cannot be empty. Please select the experience.';
+  }
+
+  if (!isset($_GET['Age']) || $_GET['Age'] === '') {
+    $errors['Age'] = 'Age cannot be empty. Please enter your age.';
+  } else if (!preg_match('/^[0-9]+$/', $_GET['Age'])) {
+    $errors['Age'] = 'Age should be a number.';
+  } else if ($_GET['Age'] < 18) {
+    $errors['Age'] = 'Age should greater than 18.';
+  }
+
+  if (!isset($_GET['PR']) || $_GET['PR'] === '') {
+    $errors['PR'] = 'Role cannot be empty. Please select your role.';
+  }
+  if (!isset($_GET['GR']) || $_GET['GR'] === '') {
+    $errors['GR'] = 'Gender is required.';
+  }
+  if (!isset($_GET['ST']) || $_GET['ST'] === '') {
+    $errors['ST'] = 'School type cannot be empty. Please select your school type..';
+  }
+
+  // If there are no errors, store data in session and redirect
+  if (empty($errors)) {
+    $_SESSION['YEAR_OF_EXPERIENCE'] = $_GET['YOE'];
+    $_SESSION['CONVERTED_YEAR_OF_EXPERIENCE'] = substr($_SESSION['YEAR_OF_EXPERIENCE'], 0, 1);
+    $_SESSION['AGE'] = $_GET['Age'];
+    $_SESSION['PRIMARY_ROLE'] = $_GET['PR'];
+    $_SESSION['GENDER'] = $_GET['GR'];
+    $_SESSION['SCHOOL_TYPE'] = $_GET['ST'];
+    header("Location: getrec_pg3.php");
+  }
 }
+
+$YOE = isset($_SESSION['YEAR_OF_EXPERIENCE']) ? $_SESSION['YEAR_OF_EXPERIENCE'] : (isset($_GET['YOE']) ? $_GET['YOE'] : '');
+if (isset($errors['Age'])) {
+  $Age = isset($_GET['Age']) ? $_GET['Age'] : '';
+} else {
+  $Age = isset($_SESSION['AGE']) ? $_SESSION['AGE'] : (isset($_GET['Age']) ? $_GET['Age'] : '');
+}
+$PR = isset($_SESSION['PRIMARY_ROLE']) ? $_SESSION['PRIMARY_ROLE'] : (isset($_GET['PR']) ? $_GET['PR'] : '');
+$GR = isset($_SESSION['GENDER']) ? $_SESSION['GENDER'] : (isset($_GET['GR']) ? $_GET['GR'] : '');
+$ST = isset($_SESSION['SCHOOL_TYPE']) ? $_SESSION['SCHOOL_TYPE'] : (isset($_GET['ST']) ? $_GET['ST'] : '');
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +60,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <title>Get Recommendation - Page 2</title>
   <link rel="stylesheet" href="gc_shifted_style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <!-- Bootstrap Libraries Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Self-Created Stylesheet -->
+  <link href="css/hci.css" rel="stylesheet">
+
+  <!-- Font Stylesheet -->
+  <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
 </head>
 
 <body>
+  <?php
+  include 'header.php'
+    ?>
   <div class="get-recommendation-2">
     <!-- Image Container Start -->
     <div class="image-container">
@@ -33,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Text Container Start -->
     <div class="text-container">
 
+      <div class="blank"></div>
       <!-- H1 & H2 Start -->
       <h1 id="f30">Step 1: Enter your details</h1>
       <h2 id="f18">
@@ -42,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <!-- H1 & H2 Start -->
 
       <!-- Form Start -->
-      <form action="" method="POST">
+      <form action="" method="GET">
 
         <!-- 1st Table (Top) Start -->
         <table class="input-table">
@@ -50,28 +103,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!-- Years of Experience Start -->
             <td><label for="YOE">Years of Experience</label></td>
             <td class="input-cell">
-              <div class="select-container">
+              <div class="select-container <?php echo isset($errors['YOE']) ? 'error' : ''; ?>">
                 <select id="YOE" name="YOE">
-                  <option value="" disabled selected id="select-placeholder">
+                  <option value="" selected disabled id="select-placeholder">
                     Select years of experience
                   </option>
-                  <option value="0">Less than 1 year</option>
-                  <option value="0">Less than 2 years</option>
-                  <option value="1">Less than 3 years</option>
-                  <option value="1">More than 3 years</option>
+                  <option value="0A" <?php echo $YOE == '0A' ? 'selected' : ''; ?>>
+                    Less than 1 year
+                  </option>
+                  <option value="0B" <?php echo $YOE == '0B' ? 'selected' : ''; ?>>
+                    Less than 2 years
+                  </option>
+                  <option value="1A" <?php echo $YOE == '1A' ? 'selected' : ''; ?>>
+                    Less than 3 years
+                  </option>
+                  <option value="1B" <?php echo $YOE == '1B' ? 'selected' : ''; ?>>
+                    More than 3 years
+                  </option>
                 </select>
               </div>
+              <!-- Error Message Start -->
+              <?php if (isset($errors['YOE'])): ?>
+                <div class="error-message"><?php echo $errors['YOE']; ?></div>
+              <?php endif; ?>
+              <!-- Error Message End -->
             </td>
             <!-- Years of Experience End -->
 
             <!-- Age Start -->
             <td><label for="Age">Age</label></td>
             <td class="input-cell">
-              <input type="number" id="Age" name="Age" placeholder="Enter your age" class="form-input" />
+              <input type="text" id="Age" name="Age" placeholder="Enter your age"
+                class="form-input <?php echo isset($errors['Age']) ? 'error' : ''; ?>" value="<?php echo $Age; ?>" />
               <!-- Error Message Start -->
-              <div class="error-message">
-                Age should be a number and greater than 18.
-              </div>
+              <?php if (isset($errors['Age'])): ?>
+                <div class="error-message"><?php echo $errors['Age']; ?></div>
+              <?php endif; ?>
               <!-- Error Message End -->
             </td>
             <!-- Age End -->
@@ -81,17 +148,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!-- Primary Role Start -->
             <td><label for="PR">Primary Role</label></td>
             <td class="input-cell">
-              <div class="select-container">
+              <div class="select-container <?php echo isset($errors['PR']) ? 'error' : ''; ?>">
                 <select id="PR" name="PR">
                   <option value="" disabled selected id="select-placeholder">
                     Select your role
                   </option>
-                  <option value="2">Administration Staff</option>
-                  <option value="1">Full-Time Teachers</option>
-                  <option value="3">Teaching and Research Supervisors</option>
-                  <option value="0">Others</option>
+                  <option value="2" <?php echo $PR == '2' ? 'selected' : ''; ?>>
+                    Administration Staff</option>
+                  <option value="1" <?php echo $PR == '1' ? 'selected' : ''; ?>>Full-Time
+                    Teachers</option>
+                  <option value="3" <?php echo $PR == '3' ? 'selected' : ''; ?>>Teaching
+                    and Research Supervisors</option>
+                  <option value="0" <?php echo $PR == '0' ? 'selected' : ''; ?>>Others
+                  </option>
                 </select>
               </div>
+              <!-- Error Message Start -->
+              <?php if (isset($errors['PR'])): ?>
+                <div class="error-message"><?php echo $errors['PR']; ?></div>
+              <?php endif; ?>
+              <!-- Error Message End -->
             </td>
             <!-- Primary Role End -->
 
@@ -100,15 +176,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <label for="GR">Gender</label>
             </td>
             <td class="input-cell">
-              <div class="select-container">
+              <div class="select-container <?php echo isset($errors['GR']) ? 'error' : ''; ?>">
                 <select id="GR" name="GR">
                   <option value="" disabled selected id="select-placeholder">
                     Select your gender
                   </option>
-                  <option value="1">Male</option>
-                  <option value="0">Female</option>
+                  <option value="1" <?php echo $GR == '1' ? 'selected' : ''; ?>>Male
+                  </option>
+                  <option value="0" <?php echo $GR == '0' ? 'selected' : ''; ?>>Female
+                  </option>
                 </select>
               </div>
+              <!-- Error Message Start -->
+              <?php if (isset($errors['GR'])): ?>
+                <div class="error-message"><?php echo $errors['GR']; ?></div>
+              <?php endif; ?>
+              <!-- Error Message End -->
             </td>
             <!-- Gender End -->
           </tr>
@@ -117,17 +200,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!-- School Type Start -->
             <td><label for="ST">School Type</label></td>
             <td class="input-cell">
-              <div class="select-container">
+              <div class="select-container <?php echo isset($errors['ST']) ? 'error' : ''; ?>">
                 <select id="ST" name="ST">
                   <option value="" disabled selected id="select-placeholder">
                     Select school type
                   </option>
-                  <option value="1">Higher Vocational School</option>
-                  <option value="3">Secondary Vocational School</option>
-                  <option value="2">University</option>
-                  <option value="0">Other</option>
+                  <option value="1" <?php echo $ST == '1' ? 'selected' : ''; ?>>Higher
+                    Vocational School</option>
+                  <option value="3" <?php echo $ST == '3' ? 'selected' : ''; ?>>Secondary
+                    Vocational School</option>
+                  <option value="2" <?php echo $ST == '2' ? 'selected' : ''; ?>>University
+                  </option>
+                  <option value="0" <?php echo $ST == '0' ? 'selected' : ''; ?>>Other
+                  </option>
                 </select>
               </div>
+              <!-- Error Message Start -->
+              <?php if (isset($errors['ST'])): ?>
+                <div class="error-message"><?php echo $errors['ST']; ?></div>
+              <?php endif; ?>
+              <!-- Error Message End -->
             </td>
             <!-- School Type End -->
             <td></td>
@@ -152,7 +244,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <div class="checkbox-wrapper-23">
                 <input type="checkbox" name="authority-style" id="authority-style" />
                 <label for="authority-style" style="--size: 30px">
-                  <svg viewBox="0,0,50,50">
+                  <svg viewBox="0,0,40,50">
                     <path d="M5 30 L 20 45 L 45 5"></path>
                   </svg>
                 </label>
@@ -239,9 +331,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </label>
               </div>
             </td>
-            <td class="other">
+            <td class="other input-cell">
               <label for="other">Other:</label>
-              <input type="text" id="other-style" name="other-style" placeholder="Please specify" />
+              <input type="text" id="other-style" name="other-style" placeholder="Please specify" class="form-input" />
             </td>
             <!-- Other style End -->
           </tr>
@@ -253,8 +345,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <!-- Same Row Buttons (Bottom) Start -->
         <div class="same-row-btn">
-          <button class="cancel-btn button">Cancel</button>
-          <button class="next-btn button">Next</button>
+          <button type="button" class="cancel-btn button" onclick="location.href='getrec_pg1.php'">Cancel</button>
+          <button type="submit" class="next-btn button">Next</button>
         </div>
         <!-- Same Row Buttons (Bottom) End -->
       </form>
@@ -262,6 +354,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <!-- Text Container End -->
   </div>
+
+  <?php
+  include 'footer.php'
+    ?>
 
   <script>
     // Script for selection list
@@ -320,6 +416,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         this.classList.toggle("select-arrow-active");
       });
     }
+
     function closeAllSelect(elmnt) {
       var x,
         y,

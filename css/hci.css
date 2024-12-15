@@ -1,6 +1,12 @@
+button:focus {
+    outline: none;
+    border: none;
+}
+
+
 /*** Navbar ***/
 .nav-bar {
-  position: relative;
+  position: absolute;
   margin-top: 17px;
   padding: 0 3rem;
   transition: 0.5s;
@@ -74,12 +80,13 @@
   font-family: "Abhaya Libre";
   margin: auto;
   width: 90%;
-  margin-top: 20px;
+  padding-top: 20px;
 }
 
 #strategy-selection h1 {
   font-size: 35px;
   font-weight: lighter;
+  margin-top: 80px;
 }
 
 #strategy-selection h1 span {
