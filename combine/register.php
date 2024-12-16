@@ -82,7 +82,7 @@ if(isset($_POST['submit'])){
   </div>
   <header> </header>
   <!-- Navbar End -->
-
+  <form action="" method="post">
   <div class="row">
     <div class="column left"></div>
     <div class="column middle">
@@ -128,6 +128,7 @@ if(isset($_POST['submit'])){
         </div>
         <p style="text-align: center;">Already have an account? <a href="log_in_page.php">Sign in</a> now.</p>
       </form>
+      
 
     </div>
     <div class="column right"></div>
