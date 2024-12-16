@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
          $password = md5($password); 
          $cpassword = md5($cpassword);
 
-         $insert = "INSERT INTO user_form(username, email, password) VALUES('$username','$email','$pass')";
+         $insert = "INSERT INTO user_form(name, email, password) VALUES('$username','$email','$password')";
          mysqli_query($conn, $insert);
       }
    }
@@ -69,12 +69,12 @@ if(isset($_POST['submit'])){
       <!-- Menu Button Start -->
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto px-2">
-          <a href="index.html" class="nav-item nav-link">Home</a>
-          <a href="about.html" class="nav-item nav-link">Get Recommendation</a>
-          <a href="about.html" class="nav-item nav-link">Features</a>
-          <a href="about.html" class="nav-item nav-link">About Us</a>
-          <a href="contact.html" class="nav-item nav-link">Contact</a>
-          <a href="sign_in.html" class="nav-item nav-link active">Sign In/Up</a>
+          <a href="index.php" class="nav-item nav-link">Home</a>
+          <a href="about.php" class="nav-item nav-link">Get Recommendation</a>
+          <a href="about.php" class="nav-item nav-link">Features</a>
+          <a href="about.php" class="nav-item nav-link">About Us</a>
+          <a href="contact.php" class="nav-item nav-link">Contact</a>
+          <a href="sign_in.php" class="nav-item nav-link active">Sign In/Up</a>
         </div>
       </div>
       <!-- Menu Button End -->
@@ -88,30 +88,30 @@ if(isset($_POST['submit'])){
     <div class="column middle">
       <h2 style="text-align: center;">Sign Up</h2>
       <p style="text-align: center;">Create a free account to use our service</p>
-      <form class="styled-form">
+      <form class="styled-form" method="post">
     
         <div class="form-row">
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" id="username" required placeholder="Enter your username">
+            <input type="text" id="username" name="username" required placeholder="Enter your username">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" required placeholder="Enter your email">
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
           </div>
         </div>
         <div class="form-row" id="password-group">
           <div class="form-group">
             <label for="password">Password</label>
             <div class="password-container">
-              <input type="password" id="password" required placeholder="Enter your password">
+              <input type="password" id="password" name="password" required placeholder="Enter your password">
               <img src="img/close-eye.png" id="toggle-password" alt="Toggle Password" class="toggle-icon">
             </div>
           </div>
           <div class="form-group">
             <label for="confirm-password">Confirm Password</label>
             <div class="password-container">
-              <input type="password" id="cpassword" required placeholder="Enter your password again">
+              <input type="password" id="cpassword" name="cpassword" required placeholder="Enter your password again">
               <img src="img/close-eye.png" id="toggle-confirm-password" alt="Toggle Password" class="toggle-icon">
             </div>
           </div>
@@ -126,7 +126,7 @@ if(isset($_POST['submit'])){
         <div class="form-actions">
           <input type="submit" name="submit" value="register now" class="form-btn">
         </div>
-        <p style="text-align: center;">Already have an account? <a href="log_in_page.html">Sign in</a> now.</p>
+        <p style="text-align: center;">Already have an account? <a href="log_in_page.php">Sign in</a> now.</p>
       </form>
 
     </div>

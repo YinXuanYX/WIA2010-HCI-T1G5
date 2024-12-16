@@ -20,7 +20,7 @@
 
     /* Left and right column */
     .column.left {
-        background-image: url("/img/login_leftside.png");
+        background-image: url("../img/login_leftside.png");
         background-repeat: no-repeat;
         background-size: cover;
         /* Ensure the image scales correctly */
@@ -29,7 +29,7 @@
     }
 
     .column.right {
-        background-image: url("/img/login_rightside.png");
+        background-image: url("../img/login_rightside.png");
         background-repeat: no-repeat;
         background-size: cover;
         /* Ensure the image scales correctly */

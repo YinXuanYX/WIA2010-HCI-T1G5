@@ -18,7 +18,7 @@ session_start();
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Self-Created Stylesheet -->
-    <link href="css/hci.css" rel="stylesheet">
+    <link href="/css/hci.css" rel="stylesheet">
 
     <!-- Font Stylesheet -->
     <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
@@ -37,10 +37,10 @@ session_start();
                 <!-- Menu Button Start -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto px-2">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">Get Recommendation</a>
-                        <a href="about.html" class="nav-item nav-link">Features</a>
-                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="index.php" class="nav-item nav-link">Home</a>
+                        <a href="about.php" class="nav-item nav-link">Get Recommendation</a>
+                        <a href="about.php" class="nav-item nav-link">Features</a>
+                        <a href="about.php" class="nav-item nav-link">About Us</a>
                         <a href="contact.php" class="nav-item nav-link active">Contact</a>
                         <a href="register.php" class="nav-item nav-link">Sign In/Up</a>
                     </div>

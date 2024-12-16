@@ -4,25 +4,22 @@
 
 session_start();
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
 
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $password = md5($_POST['password']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = md5($_POST['password']);
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$password' ";
+    $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$password' ";
 
-   $result = mysqli_query($conn, $select);
+    $result = mysqli_query($conn, $select);
 
-   if(mysqli_num_rows($result) > 0){
-
-      $row = mysqli_fetch_array($result);
-      header('contact.php');
-
-      }
-     
-   }else{
-      $error[] = 'incorrect email or password!';
-   }
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_array($result);
+        header("location: contact.php");
+    } else {
+        $error[] = 'incorrect email or password!';
+    }
+}
 
 ?>
 
@@ -41,7 +38,7 @@ if(isset($_POST['submit'])){
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Self-Created Stylesheet -->
-    <link href="css/hci.css" rel="stylesheet">
+    <link href="/css/hci.css" rel="stylesheet">
 
     <!-- Font Stylesheet -->
     <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
@@ -60,10 +57,10 @@ if(isset($_POST['submit'])){
             <!-- Menu Button Start -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto px-2">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">Get Recommendation</a>
-                    <a href="about.html" class="nav-item nav-link">Features</a>
-                    <a href="about.html" class="nav-item nav-link">About Us</a>
+                    <a href="index.php" class="nav-item nav-link">Home</a>
+                    <a href="about.php" class="nav-item nav-link">Get Recommendation</a>
+                    <a href="about.php" class="nav-item nav-link">Features</a>
+                    <a href="about.php" class="nav-item nav-link">About Us</a>
                     <a href="contact.php" class="nav-item nav-link">Contact</a>
                     <a href="register.php" class="nav-item nav-link active">Sign In/Up</a>
                 </div>
@@ -81,32 +78,34 @@ if(isset($_POST['submit'])){
         <div class="column middle">
             <h2 style="text-align: center;">Sign In</h2>
             <p style="text-align: center;">Sign in to your account to use our service</p>
-            <form class="styled-form">
-            <?php
-      if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
-         };
-      };
-      ?>
+            <form class="styled-form" method="post">
+                <?php
+                if (isset($error)) {
+                    foreach ($error as $error) {
+                        echo '<span class="error-msg">' . $error . '</span>';
+                    }
+                    ;
+                }
+                ;
+                ?>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="username">Username/Email</label>
-                        <input type="text" id="email" placeholder="Enter your username/email">
+                        <input type="text" id="email" name="email" placeholder="Enter your username/email">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="password-container">
-                            <input type="password" id="password" placeholder="Enter your password">
+                            <input type="password" id="password" name="password" placeholder="Enter your password">
                             <img src="img/close-eye.png" id="toggle-password" alt="Toggle Password" class="toggle-icon">
                         </div>
                         <a href="#" class="forgot-password">Forgot password?</a>
                     </div>
                 </div>
                 <div class="form-actions">
-                    <button type="button" class="sign-btn">Sign In</button>
+                    <button type="submit" name="submit" class="sign-btn">Sign In</button>
                 </div>
                 <p style="text-align: center;">Don't have an account? <a href="register.php">Sign up</a> now.</p>
             </form>
