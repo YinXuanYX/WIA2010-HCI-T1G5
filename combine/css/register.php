@@ -73,8 +73,8 @@ if(isset($_POST['submit'])){
           <a href="about.html" class="nav-item nav-link">Get Recommendation</a>
           <a href="about.html" class="nav-item nav-link">Features</a>
           <a href="about.html" class="nav-item nav-link">About Us</a>
-          <a href="contact.html" class="nav-item nav-link">Contact</a>
-          <a href="sign_in.html" class="nav-item nav-link active">Sign In/Up</a>
+          <a href="contact.php" class="nav-item nav-link">Contact</a>
+          <a href="register.php" class="nav-item nav-link active">Sign In/Up</a>
         </div>
       </div>
       <!-- Menu Button End -->
@@ -126,7 +126,7 @@ if(isset($_POST['submit'])){
         <div class="form-actions">
           <input type="submit" name="submit" value="register now" class="form-btn">
         </div>
-        <p style="text-align: center;">Already have an account? <a href="log_in_page.html">Sign in</a> now.</p>
+        <p style="text-align: center;">Already have an account? <a href="log_in_page.php">Sign in</a> now.</p>
       </form>
 
     </div>
