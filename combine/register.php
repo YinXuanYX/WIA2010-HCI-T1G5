@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
          $password = md5($password); 
          $cpassword = md5($cpassword);
 
-         $insert = "INSERT INTO user_form(username, email, password) VALUES('$username','$email','$pass')";
+         $insert = "INSERT INTO user_form(username, email, password) VALUES('$username','$email','$password')";
          mysqli_query($conn, $insert);
       }
    }
@@ -199,8 +199,9 @@ if(isset($_POST['submit'])){
     });
 
     document.getElementById('toggle-confirm-password').addEventListener('click', function () {
-      togglePasswordVisibility('confirm-password', 'toggle-confirm-password');
-    });
+    togglePasswordVisibility('cpassword', 'toggle-confirm-password');
+});
+
   </script>
 
 </body>
