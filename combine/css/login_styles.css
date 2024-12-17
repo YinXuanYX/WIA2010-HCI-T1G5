@@ -1,8 +1,18 @@
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Abhaya Libre' !important;
     }
 
     /* Style the header */
+
+    .error-msg{
+        color: #f1f1f1;
+        background-color: #EF0000;
+        padding: 10px 20px;
+        opacity: 0.6;
+        width: 80%;
+        margin: auto;
+        font-size: 14px;
+    }
 
 
     .row {
@@ -169,6 +179,7 @@
         font-size: 1rem;
         cursor: pointer;
         transition: background-color 0.3s ease, color 0.3s ease;
+        width: 40%;
     }
 
     .sign-btn:hover {
@@ -180,6 +191,8 @@
         background-color: #363636;
         color: #D9D9D9;
     }
+
+    
 
 
 

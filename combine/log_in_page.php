@@ -1,6 +1,6 @@
 <?php
 
-@include 'config.php';
+include 'config.php';
 
 session_start();
 
@@ -8,10 +8,11 @@ $error = [];  // Initialize the error array
 
 if (isset($_POST['submit'])) {
 
+    // Retrieve the field value
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
 
-    // Check if the email exists
+    // Check if the email exists and password match
     $select = "SELECT * FROM user_form WHERE email = '$email' AND password = '" . md5($password) . "'";
     $result = mysqli_query($conn, $select);
 
@@ -19,8 +20,20 @@ if (isset($_POST['submit'])) {
         $row = mysqli_fetch_array($result);
         // User found, redirect to the contact page
         header("Location: contact.php");
+        $_SESSION['username'] = $username;
     } else {
-        $error[] = 'Incorrect email or password!';
+        // Check if the username exists and password match
+        $select = "SELECT * FROM user_form WHERE username = '$email' AND password = '" . md5($password) . "'";
+        $result = mysqli_query($conn, $select);
+
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_array($result);
+            // User found, redirect to the contact page
+            header("Location: contact.php");
+            $_SESSION['username'] = $username;
+        } else {
+            $error['not_matched'] = 'Username/Email and password do not matched. Please try again.';
+        }
     }
 }
 
@@ -80,19 +93,25 @@ if (isset($_POST['submit'])) {
         <div class="column left"></div>
 
         <div class="column middle">
+            <!-- Welcome Message Start -->
+            <?php
+            if (isset($_SESSION['welcome_msg'])) {
+                echo "<div class='notification-box'>" . $_SESSION['welcome_msg'] . "</div>";
+            }
+            unset($_SESSION['welcome_msg']);
+            ?>
+            <!-- Welcome Message Start -->
             <h2 style="text-align: center;">Sign In</h2>
             <p style="text-align: center;">Sign in to your account to use our service</p>
-            
+
             <form class="styled-form" method="post">
+                <!-- Not Matched Message Start -->
                 <?php
-                if (isset($error)) {
-                    foreach ($error as $error) {
-                        echo '<span class="error-msg">' . $error . '</span>';
-                    }
-                    ;
+                if (isset($error['not_matched'])) {
+                    echo "<div class='error-msg'>" . $error['not_matched'] . "</div>";
                 }
-                ;
                 ?>
+                <!-- Not Matched Message End -->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="username">Username/Email</label>
