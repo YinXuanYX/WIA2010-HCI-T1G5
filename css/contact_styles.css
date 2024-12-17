@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -13,13 +14,16 @@ header {
     height: 420px; /* Height of the header */
     margin: 0;
     padding: 0;
+    top: -82px;
     position: relative; /* Position the header relative to its children */
-    z-index: -1; /* Ensure it appears beneath the navbar */
+    z-index: 1; /* Ensure it appears beneath the navbar */
 }
 
 
 /*Style the content box*/
 .contact_box {
+    position: relative;
+    top: -82px;
     background-color: #f1f1f1;
     height: 420px;
     padding: 2em;
@@ -55,6 +59,8 @@ header {
 /* Container Styling */
 /* Outer Container Styling */
 .input_box {
+    position: relative;
+    top: -82px;
     background-color: #EFEAE3; /* Full background color */
     padding: 30px 0; /* Vertical padding only to avoid horizontal issues */
     width: 100%; /* Ensure it spans the full width */
@@ -170,11 +176,15 @@ input:focus, textarea:focus {
 }
 
 .empty{
+    position: relative;
+    top: -82px;
     background-color: #f1f1f1;
     height: 30px;
 }
 /* Style the footer */
 .footer {
+    position: relative;
+    top: -82px;
     background-color: #ffffff; /* White background */
     padding: 20px 40px; /* Padding around the content */
     display: flex;
