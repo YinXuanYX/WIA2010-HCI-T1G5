@@ -4,6 +4,8 @@
 
 session_start();
 
+$error = [];  // Initialize the error array
+
 if(isset($_POST['submit'])){
 
    $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -88,6 +90,15 @@ if(isset($_POST['submit'])){
     <div class="column middle">
       <h2 style="text-align: center;">Sign Up</h2>
       <p style="text-align: center;">Create a free account to use our service</p>
+      <?php
+                // Display errors if any exist
+                if (!empty($error)) {
+                    foreach ($error as $err) {
+                        echo '<span class="error-msg" style="color: red;">' . $err . '</span><br>';
+                    }
+                }
+                ?>
+                
       <form class="styled-form">
     
         <div class="form-row">

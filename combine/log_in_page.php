@@ -4,24 +4,28 @@
 
 session_start();
 
+$error = [];  // Initialize the error array
+
 if (isset($_POST['submit'])) {
 
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
 
-    $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$password' ";
-
+    // Check if the email exists
+    $select = "SELECT * FROM user_form WHERE email = '$email' AND password = '" . md5($password) . "'";
     $result = mysqli_query($conn, $select);
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_array($result);
-        header("location: contact.php");
+        // User found, redirect to the contact page
+        header("Location: contact.php");
     } else {
-        $error[] = 'incorrect email or password!';
+        $error[] = 'Incorrect email or password!';
     }
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,6 +82,7 @@ if (isset($_POST['submit'])) {
         <div class="column middle">
             <h2 style="text-align: center;">Sign In</h2>
             <p style="text-align: center;">Sign in to your account to use our service</p>
+            
             <form class="styled-form" method="post">
                 <?php
                 if (isset($error)) {
