@@ -162,12 +162,7 @@ textarea:focus {
   font-size: 12px;
 }
 
-.notification-box{
-  padding: 10px;
-  background-color: #e6b584;
-  color:#f1f1f1;
-  z-index: 1000;
-}
+
 
 /* Footer Link */
 .column.middle a {
