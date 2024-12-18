@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header {
+    background-image: url("../img/bg1.png");
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the image scales correctly */
+    background-position: center;
+    width: 100%; /* Make the header span the full width */
+    height: 420px; /* Height of the header */
+    margin: 0;
+    padding: 0;
+    position: relative; /* Position the header relative to its children */
+    z-index: -1; /* Ensure it appears beneath the navbar */
+}
+
+
+/*Style the content box*/
+.contact_box {
+    background-color: #f1f1f1;
+    height: 420px;
+    padding: 2em;
+    text-align: center;
+    z-index: 2;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 1em 0;
+}
+.contact-info .info-item {
+    border-style: solid;
+    border-width: 5px;
+    border-color: #a5bed0;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding-top: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.social-media {
+    margin: 2em 0;
+}
+.icons a {
+    margin: 0 10px;
+}
+
+
+/* Container Styling */
+/* Outer Container Styling */
+.input_box {
+    background-color: #EFEAE3; /* Full background color */
+    padding: 30px 0; /* Vertical padding only to avoid horizontal issues */
+    width: 100%; /* Ensure it spans the full width */
+    height: 100%; /* Ensure it spans the full height */
+    box-sizing: border-box; /* Include padding in size calculation */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Inner Container Styling */
+.styled-form {
+    max-width: 600px; /* Limit the width of the form */
+    margin: 0 auto; /* Center the form within the container */
+    padding: 0 20px; /* Add horizontal padding for spacing */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+
+
+/* Form Styling */
+.styled-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Row Styling */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* Group Styling */
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Styling */
+label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Input and Textarea Styling */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 25px;
+    font-size: 1rem;
+    background-color: #FFF;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Focus Effect */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #333;
+}
+
+/* Action Buttons */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-btn{
+    padding: 10px 5px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submit-btn {
+    padding: 10px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    color: #0e0505;
+}
+
+.cancel-btn:hover {
+    color: #000;
+}
+
+.submit-btn {
+    background-color: #363636;
+    color: #D9D9D9;
+}
+
+.submit-btn:hover {
+    background-color: #E6B584;
+    color: #363636;
+}
+
+.empty{
+    background-color: #f1f1f1;
+    height: 30px;
+}
+/* Style the footer */
+.footer {
+    background-color: #ffffff; /* White background */
+    padding: 20px 40px; /* Padding around the content */
+    display: flex;
+    justify-content: center; /* Center align the content horizontally */
+    align-items: center; /* Center align vertically */
+    border-top: 1px solid #ddd; /* Optional subtle border at the top */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Space out the sections */
+    align-items: center; /* Align the items vertically */
+    width: 100%;
+    max-width: 1200px; /* Optional limit for the width */
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px; /* Space between sections */
+    text-align: center; /* Default alignment */
+}
+
+.contact {
+    text-align: left;
+}
+
+.quick-links {
+    text-align: right;
+}
+
+.footer-section p {
+    margin: 5px 0; /* Space between text items */
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.footer-logo {
+    max-width: 100px; /* Adjust logo size */
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links li {
+    margin: 5px 0;
+}
+
+.quick-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.quick-links a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,277 @@
+body {
+  font-family: 'Abhaya Libre' !important;
+}
+
+.row {
+  position: relative;
+  top: -82px;
+  z-index: 0;
+}
+
+.column {
+  float: left;
+  padding: 10px;
+  height: 800px;
+  top: -82px;
+}
+
+/* Left and right column */
+.column.left {
+  background-image: url("../img/sign_in_leftside.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Ensure the image scales correctly */
+  background-position: center;
+  width: 16.5%;
+}
+
+.column.right {
+  background-image: url("../img/sign_in_rightside.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Ensure the image scales correctly */
+  background-position: center;
+  width: 16.5%;
+}
+
+/* Middle column */
+.column.middle {
+  padding-top: 150px;
+  background-color: #f1f1f1;
+  width: 67%;
+}
+
+/* Inner Container Styling */
+.styled-form {
+  width: 100%;
+  /* Limit the width of the form */
+  margin: 0 auto;
+  /* Center the form within the container */
+  padding: 20px;
+  /* Add padding around the form */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* Row Styling */
+.form-row {
+  width: 100%;
+}
+
+/* Group Styling */
+.form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.password-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  flex: 1;
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  /* Adjust as needed */
+}
+
+/* Label Styling */
+label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Input and Textarea Styling */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 1rem;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Focus Effect */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #333;
+}
+
+/* Checkbox Container */
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-container label {
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 20px;
+}
+
+.form-btn {
+  margin: 0 auto 10px auto;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 40%;
+}
+
+.form-btn:hover {
+  background-color: #e6b584;
+  color: #363636;
+}
+
+.form-btn {
+  background-color: #363636;
+  color: #d9d9d9;
+}
+
+.error-msg {
+  font-size: 12px;
+}
+
+
+
+/* Footer Link */
+.column.middle a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.column.middle a:hover {
+  text-decoration: underline;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+.footer {
+  position: relative;
+  top: -82px;
+  background-color: #ffffff;
+  /* White background */
+  padding: 20px 40px;
+  /* Padding around the content */
+  display: flex;
+  justify-content: center;
+  /* Center align the content horizontally */
+  align-items: center;
+  /* Center align vertically */
+  border-top: 1px solid #ddd;
+  /* Optional subtle border at the top */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  /* Space out the sections */
+  align-items: center;
+  /* Align the items vertically */
+  width: 100%;
+  max-width: 1200px;
+  /* Optional limit for the width */
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 20px;
+  /* Space between sections */
+  text-align: center;
+  /* Default alignment */
+}
+
+.contact {
+  text-align: left;
+}
+
+.quick-links {
+  text-align: right;
+}
+
+.footer-section p {
+  margin: 5px 0;
+  /* Space between text items */
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.footer-logo {
+  max-width: 100px;
+  /* Adjust logo size */
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin: 5px 0;
+}
+
+.quick-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.quick-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
