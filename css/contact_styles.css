@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Abhaya Libre';
+    font-family: 'Abhaya Libre' !important;
 }
 
 
@@ -10,7 +10,7 @@ header {
     background-size: cover; /* Ensure the image scales correctly */
     background-position: center;
     width: 100%; /* Make the header span the full width */
-    height: 420px; /* Height of the header */
+    height: 220px; /* Height of the header */
     margin: 0;
     padding: 0;
     position: relative; /* Position the header relative to its children */

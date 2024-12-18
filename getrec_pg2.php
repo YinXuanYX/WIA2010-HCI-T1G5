@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET)) {
     $errors['GR'] = 'Gender is required.';
   }
   if (!isset($_GET['ST']) || $_GET['ST'] === '') {
-    $errors['ST'] = 'School type cannot be empty. Please select your school type..';
+    $errors['ST'] = 'School type cannot be empty. Please select your school type.';
   }
 
   // If there are no errors, store data in session and redirect
@@ -65,8 +65,7 @@ $ST = isset($_SESSION['SCHOOL_TYPE']) ? $_SESSION['SCHOOL_TYPE'] : (isset($_GET[
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Self-Created Stylesheet -->
-  <link href="css/hci.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/helper.css" rel="stylesheet">
 
   <!-- Font Stylesheet -->
   <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>

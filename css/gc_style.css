@@ -6,6 +6,11 @@ body {
     position: relative;
 }
 
+button:active,
+button:focus {
+    outline: none !important;
+    border: none !important;
+}
 
 .getrec-1-container {
     display: flex;
@@ -26,7 +31,7 @@ body {
 .getrec-1-container .getrec-1-text-container h1 {
     font-family: 'Abhaya Libre';
     font-size: 25px;
-    margin-left: 40px;
+    margin-left: 50px;
     margin-top: 40px;
 }
 
@@ -34,7 +39,7 @@ body {
     font-family: 'Abhaya Libre';
     font-size: 33px;
     font-weight: bold;
-    margin: 20px 20px 40px 40px;
+    margin: 20px 20px 40px 50px;
 }
 
 .getrec-1-container .getrec-1-text-container #f30{

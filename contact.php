@@ -19,7 +19,7 @@ session_start();
 
     <!-- Self-Created Stylesheet -->
     <link href="css/hci.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/helper.css" rel="stylesheet">
 
     <!-- Font Stylesheet -->
     <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>

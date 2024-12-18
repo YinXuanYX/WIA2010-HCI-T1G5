@@ -8,6 +8,13 @@ body {
   background-color: #f1f1f1 !important;
 }
 
+button:active,
+button:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 .get-recommendation-2 {
   margin: 0;
   padding: 0;

@@ -17,6 +17,7 @@ session_start();
   <!-- Link to your custom CSS file (ensure hci.css is in the same folder as this HTML file) -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/hci.css">
+  <link rel="stylesheet" type="text/css" href="css/helper.css">
 
   <!-- Link to Google Fonts for Abhaya Libre and Aboreto -->
   <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@600;800&family=Aboreto&display=swap" rel="stylesheet">
@@ -113,7 +114,7 @@ session_start();
       <h3 class="section-title-w">Worldwide User</h3>
     </div>
     <div class="text-container">
-      <p class="description">Our website is used by educators from around the world to <br> enhance their teaching skills</p>
+      <p class="description">Our website is used by educators from around the world <br/>to enhance their teaching skills</p>
     </div>
   </div>
 

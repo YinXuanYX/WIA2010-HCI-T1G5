@@ -1,17 +1,11 @@
 body {
   font-family: 'Abhaya Libre' !important;
-}
-
-.row {
-  position: relative;
-  top: -82px;
-  z-index: 0;
+  overflow-x: hidden;
 }
 
 .column {
   float: left;
-  padding: 10px;
-  height: 800px;
+  padding: 20px 10px 30px 10px;
   top: -82px;
 }
 
@@ -36,7 +30,7 @@ body {
 
 /* Middle column */
 .column.middle {
-  padding-top: 220px;
+  padding-top: 140px;
   background-color: #f1f1f1;
   width: 67%;
 }
@@ -126,6 +120,7 @@ textarea:focus {
   gap: 15px;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .checkbox-container label {
@@ -138,7 +133,7 @@ textarea:focus {
 }
 
 .form-btn {
-  margin: 0 auto 10px auto;
+  margin: 20px auto 10px auto;
   padding: 10px 40px;
   border: none;
   border-radius: 25px;

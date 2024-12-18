@@ -1,5 +1,6 @@
 body {
     font-family: 'Abhaya Libre' !important;
+    overflow-x: hidden;
 }
 
 /* Style the header */
@@ -23,17 +24,9 @@ body {
     margin: 10px auto;
   }
 
-
-.row {
-    position: relative;
-    top: -82px;
-    z-index: 0;
-}
-
 .column {
     float: left;
-    padding: 10px;
-    height: 800px;
+    padding: 20px 20px 40px 20px;
     top: -82px;
 }
 
@@ -58,7 +51,7 @@ body {
 
 /* Middle column */
 .column.middle {
-    padding-top: 220px;
+    padding-top: 140px;
     background-color: #F1F1F1;
     width: 44%;
 }
@@ -206,102 +199,6 @@ textarea:focus {
 
 
 
-
-
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Style the footer */
-.footer {
-    position: relative;
-    top: -82px;
-    background-color: #ffffff;
-    /* White background */
-    padding: 20px 40px;
-    /* Padding around the content */
-    display: flex;
-    justify-content: center;
-    /* Center align the content horizontally */
-    align-items: center;
-    /* Center align vertically */
-    border-top: 1px solid #ddd;
-    /* Optional subtle border at the top */
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    /* Space out the sections */
-    align-items: center;
-    /* Align the items vertically */
-    width: 100%;
-    max-width: 1200px;
-    /* Optional limit for the width */
-}
-
-.footer-section {
-    flex: 1;
-    padding: 0 20px;
-    /* Space between sections */
-    text-align: center;
-    /* Default alignment */
-}
-
-.contact {
-    text-align: left;
-}
-
-.quick-links {
-    text-align: right;
-}
-
-.footer-section p {
-    margin: 5px 0;
-    /* Space between text items */
-    font-size: 0.9rem;
-    color: #333;
-}
-
-.footer-logo {
-    max-width: 100px;
-    /* Adjust logo size */
-    margin-bottom: 10px;
-}
-
-.social-icons {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-}
-
-.social-icons img {
-    width: 24px;
-    height: 24px;
-}
-
-.quick-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.quick-links li {
-    margin: 5px 0;
-}
-
-.quick-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-}
-
-.quick-links a:hover {
-    text-decoration: underline;
-}
 
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */

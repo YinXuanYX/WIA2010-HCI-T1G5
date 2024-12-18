@@ -17,8 +17,7 @@
 
     <!-- Link to custom CSS file (ensure hci.css is in the same folder as this HTML file) -->
     <link rel="stylesheet" type="text/css" href="css/home.css">
-    <link rel="stylesheet" type="text/css" href="css/hci.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/helper.css">
 
     <!-- Link to Google Fonts for custom fonts (Abhaya Libre and Aboreto) -->
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@600;800&family=Aboreto&display=swap"
@@ -29,11 +28,8 @@
     <!-- Header Section -->
     <?php include "helper/header.php" ?>
 
-
-
-    <!-- Main Content Section -->
-    <!-- Welcome Message Start -->
-    <?php
+     <!-- Welcome Message Start -->
+     <?php
     session_start();
     if (isset($_SESSION['username'])) {
         echo "<div class='notification-box'> Hi, " . $_SESSION['username'] . ". Welcome to our website.</div>";
@@ -41,6 +37,8 @@
     unset($_SESSION['username']);
     ?>
     <!-- Welcome Message End -->
+
+    <!-- Main Content Section -->
     <main>
         <section class="hero text-center py-5">
             <div class="container">
@@ -52,7 +50,7 @@
                             Advanced Strategies</h1>
                         <p class="lead">Provide the <span class="effective-text">MOST EFFECTIVE</span> teaching methods
                         </p>
-                        <button class="btn btn-get-started btn-lg">Get Started</button>
+                        <button class="btn btn-get-started btn-lg" onclick="location.href='getrec_pg1.php'">Get Started</button>
                     </div>
 
                     <!-- Right Column with Image -->
