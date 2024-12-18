@@ -37,7 +37,7 @@ session_start();
         <div class="navbar-nav ms-auto px-2">
           <a href="home.html" class="nav-item nav-link">Home</a>
           <a href="getrec_pg1.php" class="nav-item nav-link">Get Recommendation</a>
-          <a href="feature.html" class="nav-item nav-link">Features</a>
+          <a href="aboutus.php" class="nav-item nav-link">Features</a>
           <a href="aboutus.php" class="nav-item nav-link active">About Us</a>
           <a href="contact.php" class="nav-item nav-link">Contact</a>
           <a href="register.php" class="nav-item nav-link">Sign In/Up</a>
