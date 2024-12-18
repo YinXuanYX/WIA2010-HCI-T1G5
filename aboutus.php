@@ -21,7 +21,7 @@ session_start();
 
   <!-- Link to Google Fonts for Abhaya Libre and Aboreto -->
   <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@600;800&family=Aboreto&display=swap" rel="stylesheet">
-  <title>About Us Page</title>
+  <title>About Us</title>
 </head>
 
 <body>

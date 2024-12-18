@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Get Recommendation pg1</title>
+    <title>Get Recommendation</title>
     <link rel="stylesheet" href="css/gc_style.css">
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />

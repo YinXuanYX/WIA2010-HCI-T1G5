@@ -93,7 +93,7 @@ if (isset($errors['CC'])) {
 <html lang="en">
 
 <head>
-  <title>Get Recommendation - Page 2</title>
+  <title>Get Recommendation</title>
   <link rel="stylesheet" href="css/gc_style3.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <!-- Bootstrap Libraries Stylesheet -->

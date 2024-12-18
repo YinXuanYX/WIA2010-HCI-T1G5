@@ -57,7 +57,7 @@ $ST = isset($_SESSION['SCHOOL_TYPE']) ? $_SESSION['SCHOOL_TYPE'] : (isset($_GET[
 <html lang="en">
 
 <head>
-  <title>Get Recommendation - Page 2</title>
+  <title>Get Recommendation</title>
   <link rel="stylesheet" href="css/gc_shifted_style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <!-- Bootstrap Libraries Stylesheet -->

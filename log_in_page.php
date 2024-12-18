@@ -19,8 +19,9 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_array($result);
         // User found, redirect to the contact page
+        $_SESSION['username'] = $row['username'];
         header("Location: home.php");
-        $_SESSION['username'] = $username;
+        
     } else {
         // Check if the username exists and password match
         $select = "SELECT * FROM user_form WHERE username = '$email' AND password = '" . md5($password) . "'";
@@ -29,8 +30,9 @@ if (isset($_POST['submit'])) {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_array($result);
             // User found, redirect to the contact page
+            $_SESSION['username'] = $row['username'];
             header("Location: home.php");
-            $_SESSION['username'] = $username;
+            
         } else {
             $error['not_matched'] = 'Username/Email and password do not matched. Please try again.';
         }
@@ -44,7 +46,7 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-    <title>Sign in page</title>
+    <title>Sign In</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/login_styles.css">

@@ -28,18 +28,18 @@
     <!-- Header Section -->
     <?php include "helper/header.php" ?>
 
-     <!-- Welcome Message Start -->
-     <?php
-    session_start();
-    if (isset($_SESSION['username'])) {
-        echo "<div class='notification-box'> Hi, " . $_SESSION['username'] . ". Welcome to our website.</div>";
-    }
-    unset($_SESSION['username']);
-    ?>
-    <!-- Welcome Message End -->
-
     <!-- Main Content Section -->
     <main>
+
+        <!-- Welcome Message Start -->
+        <?php
+        session_start();
+        if (isset($_SESSION['username'])) {
+            echo "<div class='h-100 notification-box'> Hi, " . $_SESSION['username'] . ". Welcome to our website.</div>";
+            unset($_SESSION['username']);
+        }
+        ?>
+        <!-- Welcome Message End -->
         <section class="hero text-center py-5">
             <div class="container">
                 <div class="row">
@@ -50,7 +50,8 @@
                             Advanced Strategies</h1>
                         <p class="lead">Provide the <span class="effective-text">MOST EFFECTIVE</span> teaching methods
                         </p>
-                        <button class="btn btn-get-started btn-lg" onclick="location.href='getrec_pg1.php'">Get Started</button>
+                        <button class="btn btn-get-started btn-lg" onclick="location.href='getrec_pg1.php'">Get
+                            Started</button>
                     </div>
 
                     <!-- Right Column with Image -->
@@ -70,6 +71,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pzjw8f+ua7Kw1TIq0hG5MtrzJ6P8GgZf1m0D44rF01h/2npFwB90dV6H0bxxgSg6"
         crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const notifications = document.getElementsByClassName("notification-box");
+            if (notifications.length > 0) { 
+                const notification = notifications[0];
+                // Set a timeout to hide the notification after 3 seconds
+                setTimeout(() => {
+                    notification.style.display = "none"; 
+                }, 3000); 
+            }
+        });
+    </script>
+
 </body>
 
 </html>
