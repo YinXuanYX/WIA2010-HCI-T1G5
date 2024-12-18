@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "helper/config.php";
 
 session_start();
 $strategy1 = strtolower(str_replace(" ", "-", $_SESSION['strategy-1']));
@@ -65,11 +65,11 @@ function processPhaseContent($content)
     // Step 1: Extract the title 
     $titleEndPos = strpos($content, ';');
     if ($titleEndPos !== false) {
-        $title = substr($content, 0, $titleEndPos);  
-        $remainingContent = substr($content, $titleEndPos + 1); 
+        $title = substr($content, 0, $titleEndPos);
+        $remainingContent = substr($content, $titleEndPos + 1);
     } else {
-        $title = $content; 
-        $remainingContent = '';  
+        $title = $content;
+        $remainingContent = '';
     }
 
     // Step 2: Split the remaining content by periods (.) into list items
@@ -154,6 +154,7 @@ unset($_SESSION['CLASS_SIZE']);
 
     <!-- Self-Created Stylesheet -->
     <link href="css/hci.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- Font Stylesheet -->
     <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
@@ -163,7 +164,7 @@ unset($_SESSION['CLASS_SIZE']);
     <div class="get-recommendation-4">
 
         <?php
-        include "header.php"
+        include "helper/header.php"
             ?>
 
         <!-- Strategies Selection Start -->
@@ -173,21 +174,21 @@ unset($_SESSION['CLASS_SIZE']);
 
             <div class="row">
                 <div class="col col-md-4">
-                    <div class="img-box" onclick="updateUrl('<?php echo $strategy1 ?>')">
+                    <div class="st-img-box" onclick="updateUrl('<?php echo $strategy1 ?>')">
                         <img src="img/<?php echo $image1; ?>">
                         <div class="black-box"><?php echo $_SESSION['strategy-1']; ?></div>
                         <input type="hidden" id="strategy1" name="strategy1" value="<?php echo $strategy1 ?>">
                     </div>
                 </div>
                 <div class="col col-md-4">
-                    <div class="img-box" onclick="updateUrl('<?php echo $strategy2 ?>')">
+                    <div class="st-img-box" onclick="updateUrl('<?php echo $strategy2 ?>')">
                         <img src="img/<?php echo $image2; ?>">
                         <div class="black-box"><?php echo $_SESSION['strategy-2']; ?></div>
                         <input type="hidden" id="strategy2" name="strategy2" value="<?php echo $strategy2 ?>">
                     </div>
                 </div>
                 <div class="col col-md-4">
-                    <div class="img-box" onclick="updateUrl('<?php echo $strategy3 ?>')">
+                    <div class="st-img-box" onclick="updateUrl('<?php echo $strategy3 ?>')">
                         <img src="img/<?php echo $image3; ?>">
                         <div class="black-box"><?php echo $_SESSION['strategy-3']; ?></div>
                         <input type="hidden" id="strategy3" name="strategy3" value="<?php echo $strategy3 ?>">
@@ -454,7 +455,7 @@ unset($_SESSION['CLASS_SIZE']);
         <!-- Strategy Details End -->
 
         <?php
-        include "footer.php"
+        include "helper/footer.php"
             ?>
 
 
@@ -500,11 +501,11 @@ unset($_SESSION['CLASS_SIZE']);
                 const urlParams = new URLSearchParams(window.location.search);
                 const strategyFromUrl = urlParams.get('strategy'); // Get the 'strategy' value from the URL
 
-                // Get all elements with the class 'img-box'
-                const allBoxes = document.querySelectorAll('.img-box');
+                // Get all elements with the class 'st-st-img-box'
+                const allBoxes = document.querySelectorAll('.st-img-box');
 
                 // Loop through all boxes
-                allBoxes.forEach(box => {
+                allBoxes.forEach((box,index) => {
                     // Find the hidden input element inside the current box
                     const hiddenInput = box.querySelector('input[type="hidden"]');
                     if (hiddenInput) {
@@ -514,7 +515,7 @@ unset($_SESSION['CLASS_SIZE']);
                         // If the URL's strategy matches the hidden input's value, add 'active' class
                         if (strategyFromUrl && strategyFromUrl === strategyValue) {
                             box.classList.add('active');
-                        }
+                        } 
                     }
                 });
             };

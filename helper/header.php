@@ -10,12 +10,12 @@
         <!-- Menu Button Start -->
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarCollapse">
             <div class="navbar-nav ms-auto px-2">
-                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="home.php" class="nav-item nav-link">Home</a>
                 <a href="getrec_pg1.php" class="nav-item nav-link">Get Recommendation</a>
-                <a href="about.html" class="nav-item nav-link">Features</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                <a href="about.html" class="nav-item nav-link">Contact</a>
-                <a href="about.html" class="nav-item nav-link">Sign In/Up</a>
+                <a href="#" class="nav-item nav-link">Features</a>
+                <a href="aboutus.php" class="nav-item nav-link">About Us</a>
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
+                <a href="log_in_page.php" class="nav-item nav-link">Sign In/Up</a>
             </div>
         </div>
         <!-- Menu Button End -->
@@ -37,11 +37,12 @@
 
     // Highlight current page in navbar
     $(document).ready(function () {
-        var currentUrl = window.location.pathname; // Get current page URL path
+        var currentUrl = window.location.pathname.replace(/\/$/, ''); // Get current page URL path
+        currentUrl = currentUrl.split('/').pop();
 
         // Loop through each nav link
         $('.navbar-nav .nav-link').each(function () {
-            var linkPath = $(this).attr('href'); // Get the href attribute of each link
+            var linkPath = $(this).attr('href').replace(/\/$/, ''); // Get the href attribute of each link
 
             if (currentUrl.includes('getrec')) {
                 // Add the active class if the link contains 'getrecommendation'
@@ -49,6 +50,10 @@
                     $(this).addClass('active');
                 }
             } else if (currentUrl === linkPath) {
+                // Add the active class if it's an exact match
+                $(this).addClass('active');
+            } else if (currentUrl === 'register.php') {
+                if (linkPath === 'log_in_page.php')
                 // Add the active class if it's an exact match
                 $(this).addClass('active');
             }

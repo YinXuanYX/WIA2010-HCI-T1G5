@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'helper/config.php';
 
 session_start();
 
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_array($result);
         // User found, redirect to the contact page
-        header("Location: contact.php");
+        header("Location: home.php");
         $_SESSION['username'] = $username;
     } else {
         // Check if the username exists and password match
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_array($result);
             // User found, redirect to the contact page
-            header("Location: contact.php");
+            header("Location: home.php");
             $_SESSION['username'] = $username;
         } else {
             $error['not_matched'] = 'Username/Email and password do not matched. Please try again.';
@@ -62,31 +62,8 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid nav-bar bg-transparent">
-        <nav class="navbar navbar-expand-lg py-0 px-4">
-            <!-- Search Start -->
-            <div class="col-md-4 nav-search-bar px-4">
-                <input type="text" class="form-control border-0 py-3" placeholder="SEARCH">
-            </div>
-            <!-- Search End -->
-
-            <!-- Menu Button Start -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto px-2">
-                    <a href="index.php" class="nav-item nav-link">Home</a>
-                    <a href="getrec_pg1.php" class="nav-item nav-link">Get Recommendation</a>
-                    <a href="aboutus.php" class="nav-item nav-link">Features</a>
-                    <a href="aboutus.php" class="nav-item nav-link">About Us</a>
-                    <a href="contact.php" class="nav-item nav-link">Contact</a>
-                    <a href="register.php" class="nav-item nav-link active">Sign In/Up</a>
-                </div>
-            </div>
-            <!-- Menu Button End -->
-        </nav>
-    </div>
-    <header> </header>
-    <!-- Navbar End -->
+    <!-- Header Section -->
+    <?php include "helper/header.php" ?>
 
     <div class="row">
 
@@ -100,7 +77,7 @@ if (isset($_POST['submit'])) {
             }
             unset($_SESSION['welcome_msg']);
             ?>
-            <!-- Welcome Message Start -->
+            <!-- Welcome Message End -->
             <h2 style="text-align: center;">Sign In</h2>
             <p style="text-align: center;">Sign in to your account to use our service</p>
 
@@ -136,41 +113,10 @@ if (isset($_POST['submit'])) {
         </div>
 
         <div class="column right"></div>
-
     </div>
 
-
-
-    <div class="footer">
-        <div class="footer-content">
-            <div class="footer-section contact">
-                <p><strong>CONTACT</strong></p>
-                <p>Tel: +03-123 4567</p>
-                <p>Email: hciT15@gmail.com</p>
-                <div class="social-icons">
-                    <img src="img/ig-footer.png" alt="Instagram">
-                    <img src="img/linkedin-footer.png" alt="LinkedIn">
-                    <img src="img/facebook-footer.png" alt="Facebook">
-                    <img src="img/youtube-footer.png" alt="YouTube">
-                </div>
-            </div>
-
-            <div class="footer-section logo">
-                <img src="img/group-logo.png" alt="Logo" class="footer-logo" style="width:169px;height:62px;">
-                <p>TEACHING STRATEGY RECOMMENDATION WEBSITE</p>
-            </div>
-
-            <div class="footer-section quick-links">
-                <p><strong>QUICK LINKS</strong></p>
-                <ul>
-                    <li><a href="#">> Home</a></li>
-                    <li><a href="#">> About Us</a></li>
-                    <li><a href="contact.html">> Contact</a></li>
-                    <li><a href="#">> Get Recommendation</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <!-- Footer Section -->
+    <?php include "helper/footer.php" ?>
 
 
     <!-- JavaScript Libraries -->

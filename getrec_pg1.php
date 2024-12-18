@@ -1,60 +1,40 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>Get Recommendation pg1</title>
     <link rel="stylesheet" href="css/gc_style.css">
-    <link rel="stylesheet" href="css/hci.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <!-- Bootstrap Libraries Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Self-Created Stylesheet -->
+  <link href="css/hci.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Font Stylesheet -->
+  <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
 </head>
 
 <body>
+    <!-- Header Section -->
+    <?php include "helper/header.php" ?>
 
-    <div class="container">
+    <div class="getrec-1-container">
         <div class="image-container">
-            <img src="Images/image 2.png" alt="Image">
+            <img src="img/image 2.png" alt="Image">
         </div>
 
-        <div class="text-container">
+        <div class="getrec-1-text-container">
             <h1>Would you like a</h1>
             <h2>Personalized Teaching Strategies Recommendation?</h2>
             <button class="button" onclick="location.href='getrec_pg2.php'">Start Now</button>
         </div>
     </div>
-
-
-
-    <!-- Footer Start -->
-    <div class="footer">
-        <div class="footer-content">
-            <div class="footer-section contact">
-                <p><strong>CONTACT</strong></p>
-                <p>Tel: +03-123 4567</p>
-                <p>Email: hciT15@gmail.com</p>
-                <div class="social-icons">
-                    <img src="img/ig-footer.png" alt="Instagram">
-                    <img src="img/linkedin-footer.png" alt="LinkedIn">
-                    <img src="img/facebook-footer.png" alt="Facebook">
-                    <img src="img/youtube-footer.png" alt="YouTube">
-                </div>
-            </div>
-
-            <div class="footer-section logo">
-                <img src="img/group-logo.png" alt="Logo" class="footer-logo" style="width:169px;height:62px;">
-                <p>TEACHING STRATEGY RECOMMENDATION WEBSITE</p>
-            </div>
-
-            <div class="footer-section quick-links">
-                <p><strong>QUICK LINKS</strong></p>
-                <ul>
-                    <li><a href="#">> Home</a></li>
-                    <li><a href="#">> About Us</a></li>
-                    <li><a href="#">> Contact</a></li>
-                    <li><a href="#">> Get Recommendation</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+    <!-- Footer Section -->
+    <?php include "helper/footer.php" ?>
 
 </body>
 

@@ -109,7 +109,7 @@ if (isset($errors['CC'])) {
 
 <body>
   <?php
-  include 'header.php'
+  include 'helper/header.php'
     ?>
   <div class="get-recommendation-2">
 
@@ -357,13 +357,13 @@ if (isset($errors['CC'])) {
 
     <!-- Image Container Start -->
     <div class="image-container">
-      <img src="Images/image 4.png" alt="Image" />
+      <img src="img/image 4.png" alt="Image" />
     </div>
     <!-- Image Container End -->
   </div>
 
   <?php
-  include 'footer.php'
+  include 'helper/footer.php'
     ?>
 
   <script>

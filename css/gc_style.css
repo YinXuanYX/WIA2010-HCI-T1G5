@@ -1,77 +1,78 @@
 body {
-    background-color: #F1F1F1;
+    background-color: #F1F1F1 !important;
     margin: 0;
     padding: 0;
     height: 100%;
-    /* Ensure body takes full height */
     position: relative;
-    /* Set relative positioning to be the reference for absolute positioning */
 }
 
 
-.container {
+.getrec-1-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-.image-container img {
+.getrec-1-container .image-container img {
     width: 100%;
 }
 
-.text-container {
+.getrec-1-container .getrec-1-text-container {
     width: 50%;
 }
 
 
-.text-container h1 {
-    font-family: Abhaya Libre SemiBold;
+.getrec-1-container .getrec-1-text-container h1 {
+    font-family: 'Abhaya Libre';
     font-size: 25px;
+    margin-left: 40px;
+    margin-top: 40px;
 }
 
-.text-container h2 {
-    font-family: Abhaya Libre ExtraBold;
-    font-size: 37px;
-    margin-right: 20;
+.getrec-1-container .getrec-1-text-container h2 {
+    font-family: 'Abhaya Libre';
+    font-size: 33px;
+    font-weight: bold;
+    margin: 20px 20px 40px 40px;
 }
 
-.text-container #f30{
+.getrec-1-container .getrec-1-text-container #f30{
     font-size:30px;
-    font-family: Abhaya Libre SemiBold;
+    font-family: 'Abhaya Libre';
 }
 
-.text-container #f18{
+.getrec-1-container .getrec-1-text-container #f18{
     font-size:18px;
-    font-family: Abhaya Libre;
+    font-family: 'Abhaya Libre';
 }
 
-.text-container label {
+.getrec-1-container .getrec-1-text-container label {
     font-size: 18px;
-    font-family: Abhaya Libre SemiBold;
+    font-family: 'Abhaya Libre';
 }
 
-.text-container input {
+.getrec-1-container .getrec-1-text-container input {
     width: 80%; /* Makes the elements take the full width of the container */
     padding: 15px; /* Adds padding for more spacing inside */
     border-width: 0px;
     font-size: 16px; /* Increases font size */
-    font-family: Abhaya Libre;
+    font-family: 'Abhaya Libre';
     border-radius: 200px; /* Optional: Rounded corners */
     margin-bottom: 10px; /* Adds space below each input/select */
 }
 
-.text-container select{
+.getrec-1-container .getrec-1-text-container select{
     width: 60%; /* Makes the elements take the full width of the container */
     padding: 15px; /* Adds padding for more spacing inside */
     border-width: 0px;
     font-size: 16px; /* Increases font size */
-    font-family: Abhaya Libre;
+    font-family: 'Abhaya Libre';
     border-radius: 200px; /* Optional: Rounded corners */
     margin-bottom: 10px; /* Adds space below each input/select */
 }
 
-.button {
+.getrec-1-container .button {
     background-color: #D9D9D9;
     color: #363636;
     border-radius: 200px;
@@ -82,67 +83,11 @@ body {
     margin-top: 10px;
     transform: translateX(300px);
     font-size: 25px;
-    font-family: Abhaya Libre;
+    font-family: 'Abhaya Libre';
 }
 
 
 
-.button:hover {
+.getrec-1-container .button:hover {
     background-color: #B5B5B5;
-}
-
-h3.contact {
-    font-family: Aboreto;
-    font-size: 15px;
-    font-weight: 250;
-    margin-top: 30px;
-    margin-left: 40px;
-    margin-bottom: 10px;
-}
-
-h3.phone,
-h3.email {
-    margin: 0px;
-    margin-left: 40px;
-    font-family: Abhaya Libre;
-    font-weight: 300;
-    font-size: 16px;
-}
-
-/* Quick Links Section */
-.quicklinks-container {
-
-    position: absolute;
-    /* Positioning it relative to the body */
-    bottom: 20px;
-    right: 100px;
-    /* 20px from the right side */
-    padding: 10px;
-    transform: translateY(80px);
-
-
-    .quicklinks-container h3 {
-        font-family: 'Abhaya Libre';
-        font-size: 20px;
-        margin-bottom: 0px;
-    }
-
-    .quicklinks-container ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .quicklinks-container ul li {
-        margin-bottom: 0px;
-    }
-
-    .quicklinks-container ul li a {
-        color: #363636;
-        font-size: 16px;
-    }
-
-    .quicklink-container ul li a:hover {
-        color: #007BFF;
-    }
 }

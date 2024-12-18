@@ -66,6 +66,7 @@ $ST = isset($_SESSION['SCHOOL_TYPE']) ? $_SESSION['SCHOOL_TYPE'] : (isset($_GET[
 
   <!-- Self-Created Stylesheet -->
   <link href="css/hci.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
   <!-- Font Stylesheet -->
   <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
@@ -73,12 +74,12 @@ $ST = isset($_SESSION['SCHOOL_TYPE']) ? $_SESSION['SCHOOL_TYPE'] : (isset($_GET[
 
 <body>
   <?php
-  include 'header.php'
+  include 'helper/header.php'
     ?>
   <div class="get-recommendation-2">
     <!-- Image Container Start -->
     <div class="image-container">
-      <img src="Images/image 3.png" alt="Image" />
+      <img src="img/image 3.png" alt="Image" />
     </div>
     <!-- Image Container End -->
 
@@ -356,7 +357,7 @@ $ST = isset($_SESSION['SCHOOL_TYPE']) ? $_SESSION['SCHOOL_TYPE'] : (isset($_GET[
   </div>
 
   <?php
-  include 'footer.php'
+  include 'helper/footer.php'
     ?>
 
   <script>
