@@ -15,7 +15,7 @@
                 <a href="#" class="nav-item nav-link">Features</a>
                 <a href="aboutus.php" class="nav-item nav-link">About Us</a>
                 <a href="contact.php" class="nav-item nav-link">Contact</a>
-                <a href="log_in_page.php" class="nav-item nav-link">Sign In/Up</a>
+                <?php echo !isset($_SESSION['username'])? '<a href="log_in_page.php" class="nav-item nav-link">Sign In/Up</a>':'<a href="helper/logout.php" class="nav-item nav-link">Sign Out</a>';?>   
             </div>
         </div>
         <!-- Menu Button End -->

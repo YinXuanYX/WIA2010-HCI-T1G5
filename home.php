@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,10 +39,9 @@
 
         <!-- Welcome Message Start -->
         <?php
-        session_start();
-        if (isset($_SESSION['username'])) {
-            echo "<div class='h-100 notification-box'> Hi, " . $_SESSION['username'] . ". Welcome to our website.</div>";
-            unset($_SESSION['username']);
+        if (isset($_SESSION['user'])) {
+            echo "<div class='h-100 notification-box'> Hi, " . $_SESSION['user'] . ". Welcome to our website.</div>";
+            unset($_SESSION['user']);
         }
         ?>
         <!-- Welcome Message End -->

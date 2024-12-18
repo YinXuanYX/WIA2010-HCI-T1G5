@@ -6,6 +6,6 @@ session_start();
 session_unset();
 session_destroy();
 
-header('location:log_in_page.php');
+header('location:../log_in_page.php');
 
 ?>``

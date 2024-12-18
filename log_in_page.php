@@ -19,7 +19,8 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_array($result);
         // User found, redirect to the contact page
-        $_SESSION['username'] = $row['username'];
+        $_SESSION['user'] = $row['username'];
+        $_SESSION['username'] = $_SESSION['user'];
         header("Location: home.php");
         
     } else {
@@ -30,7 +31,8 @@ if (isset($_POST['submit'])) {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_array($result);
             // User found, redirect to the contact page
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['user'] = $row['username'];
+            $_SESSION['username'] = $_SESSION['user'];
             header("Location: home.php");
             
         } else {
