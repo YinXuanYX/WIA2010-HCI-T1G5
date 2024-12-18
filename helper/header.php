@@ -12,7 +12,7 @@
             <div class="navbar-nav ms-auto px-2">
                 <a href="home.php" class="nav-item nav-link">Home</a>
                 <a href="getrec_pg1.php" class="nav-item nav-link">Get Recommendation</a>
-                <a href="#" class="nav-item nav-link">Features</a>
+                <a href="features.php" class="nav-item nav-link">Features</a>
                 <a href="aboutus.php" class="nav-item nav-link">About Us</a>
                 <a href="contact.php" class="nav-item nav-link">Contact</a>
                 <?php echo !isset($_SESSION['username'])? '<a href="log_in_page.php" class="nav-item nav-link">Sign In/Up</a>':'<a href="helper/logout.php" class="nav-item nav-link">Sign Out</a>';?>   
