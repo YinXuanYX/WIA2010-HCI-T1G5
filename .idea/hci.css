@@ -1,0 +1,119 @@
+/* Overall Body Background */
+body {
+    background-color: #f1f1f1; /* Set the background color for the entire page */
+}
+
+/* Navbar */
+.nav-bar {
+    position: relative; /* Set the navbar's position relative to other elements */
+    margin-top: 17px; /* Add top margin to separate the navbar from the top */
+    padding: 0 3rem; /* Add padding to the left and right of the navbar */
+    transition: 0.5s; /* Smooth transition for any changes */
+    z-index: 9999; /* Ensure navbar stays on top of other elements */
+}
+
+.nav-bar.sticky-top {
+    position: sticky; /* Make navbar stick to the top when scrolling */
+    padding: 0; /* Remove padding for sticky state */
+    z-index: 9999; /* Keep the navbar at the top of the stacking context */
+}
+
+.nav-bar .navbar {
+    box-shadow: rgba(0, 0, 0, 0.4) 2.4px 2.4px 3.2px; /* Add a subtle shadow to the navbar */
+    height: 65px; /* Set a fixed height for the navbar */
+    background-color: #e3dcd4; /* Light grey background for the navbar */
+}
+
+/* Apply Aboreto font to navbar items */
+.nav-bar .navbar .navbar-nav .nav-item {
+    font-family: 'Aboreto', serif; /* Apply Aboreto font to navbar items */
+    font-size: 14px; /* Set a consistent font size */
+    text-transform: uppercase; /* Make text uppercase */
+    color: #000000; /* Set the text color to black */
+    text-wrap: nowrap; /* Prevent text wrapping */
+    margin: 8px; /* Add margin between nav items */
+}
+
+.nav-bar .navbar .navbar-nav .nav-item.active {
+    background-color: #363636; /* Dark background for the active menu item */
+    color: #fffdfd; /* Light text color for the active item */
+    padding: 5px 20px; /* Add padding for the active item */
+    border-radius: 8px; /* Rounded corners for the active item */
+    position: relative; /* Ensure it stays in place */
+}
+
+/* Ensure both "Teaching" and "MOST EFFECTIVE" are red */
+.teaching-text, .effective-text {
+    color: red !important; /* Force red color for these specific text elements */
+}
+
+/* Square background for "Enhance Teaching With Advanced Strategies" */
+.square-background {
+    background-color: #cfcccc; /* Set the background color for the square */
+    padding: 10px 20px; /* Add padding to give the text some space */
+    max-width: 100%; /* Ensure the background doesn't overflow */
+    font-family: 'Cheltenham FS', serif; /* Apply Cheltenham FS font */
+}
+
+/* Adjust heading size for "Enhance Teaching With Advanced Strategies" */
+h1.display-4 {
+    font-size: 2rem; /* Set a font size for the heading */
+    white-space: normal; /* Allow the text to break into multiple lines */
+    text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+}
+
+/* Semi-circle button for "Get Started" */
+.btn-get-started {
+    font-family: 'Abhaya Libre', serif; /* Use Abhaya Libre font */
+    border-radius: 30px; /* Create a rounded, semi-circle button */
+    padding: 15px 40px; /* Add padding inside the button */
+    background-color: #d9d9d9; /* Set a grey background color */
+    border: none; /* Remove the button border */
+    color: black; /* Set text color to black */
+    text-transform: uppercase; /* Make button text uppercase */
+    letter-spacing: 1px; /* Add some spacing between letters */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color changes */
+}
+
+.btn-get-started:hover {
+    background-color: #b3b3b3; /* Darken the button on hover */
+    color: black; /* Keep the text color black on hover */
+}
+
+/* Adjust the font size dynamically for smaller screens to prevent overflow */
+@media screen and (max-width: 768px) {
+    .square-background {
+        padding: 8px 16px; /* Reduce padding for smaller screens */
+    }
+    h1.display-4 {
+        font-size: 1.5rem; /* Reduce the font size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1.display-4 {
+        font-size: 1.2rem; /* Further reduce the font size for very small screens */
+    }
+}
+
+/* Apply Aboreto font to the headers in Contact and Quick Links sections */
+footer .col-md-4 h3 {
+    font-family: 'Aboreto', serif; /* Apply Aboreto font to all h3 headers in footer */
+}
+
+/* Apply Abhaya Libre SemiBold to Quick Links list items */
+footer .col-md-4 ul li a {
+    font-family: 'Abhaya Libre', serif; /* Apply Abhaya Libre font to links */
+    color: #000; /* Set the link text color to black */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Apply Abhaya Libre font to Tel and Email under Contact */
+footer .col-md-4 p {
+    font-family: 'Abhaya Libre', serif; /* Apply Abhaya Libre font to paragraph text */
+}
+
+/* Optional: Adjust link hover color for Quick Links */
+footer .col-md-4 ul li a:hover {
+    color: #0056b3; /* Change link color on hover */
+}
