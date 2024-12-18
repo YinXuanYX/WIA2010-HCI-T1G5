@@ -102,7 +102,8 @@ if (isset($errors['CC'])) {
 
   <!-- Self-Created Stylesheet -->
   <link href="css/hci.css" rel="stylesheet">
-
+  <link href="css/style.css" rel="stylesheet">
+  
   <!-- Font Stylesheet -->
   <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
 </head>
