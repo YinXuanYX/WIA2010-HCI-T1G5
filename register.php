@@ -97,8 +97,8 @@ if (isset($_POST['submit'])) {
         <div class="navbar-nav ms-auto px-2">
           <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="getrec_pg1.php" class="nav-item nav-link">Get Recommendation</a>
-          <a href="about.html" class="nav-item nav-link">Features</a>
-          <a href="about.html" class="nav-item nav-link">About Us</a>
+          <a href="aboutus.php" class="nav-item nav-link">Features</a>
+          <a href="aboutus.php" class="nav-item nav-link">About Us</a>
           <a href="contact.php" class="nav-item nav-link">Contact</a>
           <a href="register.php" class="nav-item nav-link active">Sign In/Up</a>
         </div>

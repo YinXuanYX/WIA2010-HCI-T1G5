@@ -38,9 +38,9 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto px-2">
                         <a href="index.php" class="nav-item nav-link">Home</a>
-                        <a href="about.php" class="nav-item nav-link">Get Recommendation</a>
+                        <a href="getrec_pg1.php" class="nav-item nav-link">Get Recommendation</a>
                         <a href="about.php" class="nav-item nav-link">Features</a>
-                        <a href="about.php" class="nav-item nav-link">About Us</a>
+                        <a href="aboutus.php" class="nav-item nav-link">About Us</a>
                         <a href="contact.php" class="nav-item nav-link active">Contact</a>
                         <a href="register.php" class="nav-item nav-link">Sign In/Up</a>
                     </div>
